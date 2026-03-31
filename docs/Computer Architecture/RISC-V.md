@@ -16,15 +16,20 @@ El proyecto nació en el año 2010 en la Universidad de California, Berkeley, im
 
 ## Características de RISC-V
 Las principales virtudes técnicas y de diseño que definen a esta arquitectura son:
-* **Código Abierto (Open Source):** La especificación completa de las instrucciones es pública, evitando el pago de regalías e incrementando la innovación colaborativa global.
-* **Diseño Base Modular:** Cuenta con un núcleo de instrucciones base obligatorio muy estricto (menos de 50 instrucciones enteras). Las demás funciones se aplican en forma de *extensiones* conectables (suma de punto flotante, criptografía, operaciones vectoriales, etc.), permitiendo al fabricante incluir únicamente el hardware exacto que necesita.
-* **Simplicidad RISC:** Elimina la sobrecarga de diseño de las arquitecturas CISC modernas, reduciendo significativamente la complejidad estructural del silicio para permitir tener menos consumo energético, transistores y costo de fabricación.
-* **Portabilidad y Escalabilidad:** Es apto transversalmente tanto para microcontroladores diminutos para IoT, como para niveles de alto rendimiento como servidores e infraestructura Cloud.
+
+* **Código Abierto (Open Source):**
+ La especificación completa de las instrucciones es pública, evitando el pago de regalías e incrementando la innovación colaborativa global.
+* **Diseño Base Modular:** 
+Cuenta con un núcleo de instrucciones base obligatorio muy estricto (menos de 50 instrucciones enteras). Las demás funciones se aplican en forma de *extensiones* conectables (suma de punto flotante, criptografía, operaciones vectoriales, etc.), permitiendo al fabricante incluir únicamente el hardware exacto que necesita.
+* **Simplicidad RISC:** 
+Elimina la sobrecarga de diseño de las arquitecturas CISC modernas, reduciendo significativamente la complejidad estructural del silicio para permitir tener menos consumo energético, transistores y costo de fabricación.
+* **Portabilidad y Escalabilidad:**
+Es apto transversalmente tanto para microcontroladores diminutos para IoT, como para niveles de alto rendimiento como servidores e infraestructura Cloud.
 
 ## La Filosofía RISC vs. CISC: ¿Por qué menos es más?
 
 <figure markdown="span">
-    <img src="../../images/Risc-v/Cisc.png">
+    <img src="../../images/Risc-v/CISC.png">
 </figure>
 
 El impacto técnico de RISC-V radica en su drástica reducción de instrucciones frente a arquitecturas complejas tradicionales (CISC) como x86 de Intel/AMD. Mientras que el núcleo base de RISC-V (el estándar RV32I) opera con apenas 40 instrucciones fundamentales, las arquitecturas CISC acumulan miles de ellas debido a décadas de retrocompatibilidad.
@@ -33,11 +38,14 @@ En lugar de tener una instrucción hiperespecializada para cada tarea, RISC-V pr
 
 Ventajas tangibles en el hardware:
 
-* **Eficiencia de silicio y térmica:** Al decodificar solo 40 instrucciones, los circuitos lógicos son diminutos. Menos transistores significan chips mucho más baratos de fabricar y con una disipación de calor mínima.
+* **Eficiencia de silicio y térmica:**
+ Al decodificar solo 40 instrucciones, los circuitos lógicos son diminutos. Menos transistores significan chips mucho más baratos de fabricar y con una disipación de calor mínima.
 
-* **Ejecución ágil (Un solo ciclo):** Al ser instrucciones tan simples ("atómicas"), la inmensa mayoría se ejecutan en un solo ciclo de reloj, acelerando el cauce interno de la CPU (pipeline). En CISC, las instrucciones complejas tardan varios ciclos en resolverse.
+* **Ejecución ágil (Un solo ciclo):**
+ Al ser instrucciones tan simples ("atómicas"), la inmensa mayoría se ejecutan en un solo ciclo de reloj, acelerando el cauce interno de la CPU (pipeline). En CISC, las instrucciones complejas tardan varios ciclos en resolverse.
 
-* **Viabilidad académica:** Esta limpieza arquitectónica permite que un estudiante diseñe, simule y sintetice un procesador RISC-V funcional en una FPGA durante un solo semestre universitario, algo inabarcable bajo la saturación y complejidad de un diseño x86.
+* **Viabilidad académica:**
+ Esta limpieza arquitectónica permite que un estudiante diseñe, simule y sintetice un procesador RISC-V funcional en una FPGA durante un solo semestre universitario, algo inabarcable bajo la saturación y complejidad de un diseño x86.
 
 ## ¿Qué lo diferencia de la competencia?
 Principalmente su naturaleza libre como modelo de negocio, pero también su limpieza técnica:
@@ -58,30 +66,52 @@ Su adopción ya está generando cambios estructurales en la industria semiconduc
 
 ## Ejemplos de Implementaciones Comerciales
 La adopción real ya es omnipresente, escalada y demostrada en producciones comerciales y productos integrados muy representativos y pioneros en diferentes entornos:
-* **Western Digital y Seagate:** Ambos líderes empresariales en soportes de medios de la industria transicionaron en firme sus controladores subyacentes encargados de gestionar miles de millones de bloques físicos del hardware (operaciones Flash NAND en unidades SSD y cabezales en discos HDD) utilizando núcleos RISC-V.
-* **SiFive:** Es la entidad principal que desarrolla RISC-V de forma puramente productiva y comercial. Desarrollan la propiedad intelectual (IP) de formidables núcleos validados y perfeccionados, licenciando además modelos de arquitectura de prueba orientados hacia placas tangibles ("kits hardware" de desarrollo para programadores).
-* **Alibaba:** Codificaron y diseñaron su procesador más portentoso, el llamado chipset *XuanTie 910*, con fines centralizados y enfocados a proveer fuerza de cálculo virtual alojado hacia bases de datos o servicios para la "nube" del mercado asático de gran corporativismo abierto bajo licencia *Open Source*.
-* **Qualcomm y Google:** Qualcomm ha integrado núcleos RISC-V en sus SoC Snapdragon para gestionar funciones internas de bajo nivel, como la administración de energía y los subsistemas de conectividad, reduciendo así su dependencia de IP propietaria en componentes auxiliares. Por su parte, Google ha contribuido activamente al proyecto Android Open Source (AOSP) para garantizar compatibilidad oficial con la arquitectura RISC-V, sentando las bases para que futuros dispositivos Android puedan ejecutarse de forma nativa sobre procesadores de esta arquitectura.
+
+* **Western Digital y Seagate:**
+ Ambos líderes empresariales en soportes de medios de la industria transicionaron en firme sus controladores subyacentes encargados de gestionar miles de millones de bloques físicos del hardware (operaciones Flash NAND en unidades SSD y cabezales en discos HDD) utilizando núcleos RISC-V.
+
+* **SiFive:** 
+Es la entidad principal que desarrolla RISC-V de forma puramente productiva y comercial. Desarrollan la propiedad intelectual (IP) de formidables núcleos validados y perfeccionados, licenciando además modelos de arquitectura de prueba orientados hacia placas tangibles ("kits hardware" de desarrollo para programadores).
+
+* **Alibaba:** 
+Codificaron y diseñaron su procesador más portentoso, el llamado chipset *XuanTie 910*, con fines centralizados y enfocados a proveer fuerza de cálculo virtual alojado hacia bases de datos o servicios para la "nube" del mercado asático de gran corporativismo abierto bajo licencia *Open Source*.
+
+* **Qualcomm y Google:** 
+Qualcomm ha integrado núcleos RISC-V en sus SoC Snapdragon para gestionar funciones internas de bajo nivel, como la administración de energía y los subsistemas de conectividad, reduciendo así su dependencia de IP propietaria en componentes auxiliares. Por su parte, Google ha contribuido activamente al proyecto Android Open Source (AOSP) para garantizar compatibilidad oficial con la arquitectura RISC-V, sentando las bases para que futuros dispositivos Android puedan ejecutarse de forma nativa sobre procesadores de esta arquitectura.
 
 ## Nomenclatura y Extensiones del Conjunto de Instrucciones
-RISC-V utiliza un sistema de letras para definir las funcionalidades incluidas en un chip. [cite_start]La arquitectura base suele denotarse por su capacidad de procesamiento, como RV32I (32 bits y 32 registros) o RV64I (64 bits)[cite: 62, 63]. [cite_start]A partir de ahí, se añaden letras para cada módulo soportado[cite: 66]:
+RISC-V utiliza un sistema de letras para definir las funcionalidades incluidas en un chip. La arquitectura base suele denotarse por su capacidad de procesamiento, como RV32I (32 bits y 32 registros) o RV64I (64 bits). A partir de ahí, se añaden letras para cada módulo soportado:
+
 * **M**: Multiplicación y división entera.
 * **A**: Instrucciones atómicas.
 * **F y D**: Punto flotante de precisión simple y doble.
 * **C**: Instrucciones comprimidas a 16 bits para ahorrar memoria.
-[cite_start]La combinación estándar más común (I, M, A, F, D) se agrupa bajo la letra **G** (General), dando lugar a clasificaciones como RV32G o RV64G[cite: 65, 67].
+
+La combinación estándar más común (I, M, A, F, D) se agrupa bajo la letra **G** (General), dando lugar a clasificaciones como RV32G o RV64G.
 
 ## Ecosistema de Software y Herramientas (Toolchains)
-[cite_start]El avance de RISC-V depende directamente de sus herramientas gratuitas y de código abierto[cite: 46]:
-* [cite_start]**Compiladores y Entornos:** Plataformas como **PlatformIO** o **Freedom Studio** proporcionan entornos de desarrollo (IDE) completos para escribir código en C/C++ y cargarlo en las placas RISC-V[cite: 46, 53, 183].
-* [cite_start]**Simuladores:** Herramientas como **Verilator** (simulador de hardware) y **Whisper** (simulador de conjunto de instrucciones de Western Digital) permiten depurar el código en el ordenador sin necesitar el hardware físico[cite: 361, 362].
-* [cite_start]**Síntesis de Hardware:** Para proyectos avanzados, entornos como **Xilinx Vivado** convierten código Verilog en configuraciones físicas (archivos *bitstream*)[cite: 257, 316].
+El avance de RISC-V depende directamente de sus herramientas gratuitas y de código abierto:
+
+* **Compiladores y Entornos:** 
+Plataformas como **PlatformIO** o **Freedom Studio** proporcionan entornos de desarrollo (IDE) completos para escribir código en C/C++ y cargarlo en las placas RISC-V.
+
+* **Simuladores:**
+Herramientas como **Verilator** (simulador de hardware) y **Whisper** (simulador de conjunto de instrucciones de Western Digital) permiten depurar el código en el ordenador sin necesitar el hardware físico.
+
+* **Síntesis de Hardware:**
+Para proyectos avanzados, entornos como **Xilinx Vivado** convierten código Verilog en configuraciones físicas (archivos *bitstream*).
 
 ## Plataformas Hardware para Experimentación (Kits de Desarrollo)
 El estudio y despliegue de RISC-V se materializa en diversas placas escalonadas según su nivel:
-1. [cite_start]**Nivel Básico (Internet de las Cosas e IA):** Placas como la **Seeed Maix BiT** incluyen procesadores RISC-V potentes de doble núcleo (ej. Kendryte K210 a 400MHz) orientados a inteligencia artificial y visión artificial por apenas $25, programables directamente mediante MicroPython[cite: 27, 28, 416].
-2. **Nivel Medio (Sistemas Embebidos):** Placas de desarrollo como las **SparkFun RED-V**, que integran el SoC Freedom Everywhere FE310 de SiFive. [cite_start]Están orientadas a la programación más técnica en lenguaje C y ensamblador[cite: 29, 181].
-3. [cite_start]**Nivel Avanzado (Implementación en FPGA):** Para quienes estudian la estructura profunda de un ordenador, existen implementaciones de núcleos lógicos (como el núcleo **SweRV** de Western Digital) embebidos dentro de FPGAs altamente avanzadas como la **Digilent Nexys A7**[cite: 30]. [cite_start]Esto permite alterar físicamente el funcionamiento interno del procesador[cite: 234].
+
+1. **Nivel Básico (Internet de las Cosas e IA):**
+Placas como la **Seeed Maix BiT** incluyen procesadores RISC-V potentes de doble núcleo (ej. Kendryte K210 a 400MHz) orientados a inteligencia artificial y visión artificial por apenas $25, programables directamente mediante MicroPython.
+
+2. **Nivel Medio (Sistemas Embebidos):**
+Placas de desarrollo como las **SparkFun RED-V**, que integran el SoC Freedom Everywhere FE310 de SiFive. Están orientadas a la programación más técnica en lenguaje C y ensamblador.
+
+3. **Nivel Avanzado (Implementación en FPGA):**
+Para quienes estudian la estructura profunda de un ordenador, existen implementaciones de núcleos lógicos (como el núcleo **SweRV** de Western Digital) embebidos dentro de FPGAs altamente avanzadas como la **Digilent Nexys A7**. Esto permite alterar físicamente el funcionamiento interno del procesador.
 
 ## Ejemplo Práctico: Código C vs Ensamblador: RISC-V vs CISC
 La principal característica de la arquitectura "Reduced Instruction Set" es su claridad computacional. Si escribimos un bucle clásico en lenguaje C:
