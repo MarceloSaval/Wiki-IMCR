@@ -315,7 +315,7 @@ Por ejemplo, **Cheat Engine** o **GameConqueror** pueden ser utilizados para hac
 
 ### Aislamiento
 
-Es muy aconsejable, cuando hagamos ingeniería inversa hacerlo en entornos aislados o desechables. Pero nunca sobre nuestra máquina si ello implica la ejecución de código malicioso o uno erróneo reconstruido por nosotros. Hay ocaciones en las que es imposible hacer ejecución directamente porque alguno de los componentes del computador del ordenador destino no son compatibles.
+Es muy aconsejable, cuando hagamos ingeniería inversa hacerlo en entornos aislados o desechables. Pero nunca sobre nuestra máquina si ello implica la ejecución de código malicioso o uno erróneo reconstruido por nosotros. Hay ocasiones en las que es imposible hacer ejecución directamente porque alguno de los componentes del computador del ordenador destino no son compatibles.
 
 Podríamos destacar al menos tres mecanismos [^ref:recursiveRef]:
 
