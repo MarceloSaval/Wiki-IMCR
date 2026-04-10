@@ -36,7 +36,8 @@ Algunas de las asistencias ofrecidas son:
 **Limitaciones**:El coche no puede controlar a la vez movimientos longitudinales (|) y laterales(-).
 
 3.**Nivel 2**:El coche ya puede controlar simultáneamente movimientos longitudinales (|) y laterales (-) y es capaz de acelerar o frenar manteniendo la distancia con el coche de 	delante y manteniéndose en el carril.
-	Algunas de las asistencias ofrecidas son:
+Algunas de las asistencias ofrecidas son:
+
 * Ayuda al aparcamiento sin que el conductor toque el volante
 * Asistente de conducción para reducir el estrés en los atascos	
 
