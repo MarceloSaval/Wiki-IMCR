@@ -245,4 +245,10 @@ Algunas de las **empresas más conocidas** son:
 * Mobileye (Intel) 
 * Baidu (China,taxis autónomos)
 
+# 7. Videos demostrativos
+[Coche autonómo conduciendo por Barcelona](https://youtube.com/shorts/sasCIiBckks?si=I_wLrKS2leZdeJiJ)
+[Bloqueo debido a apagones eléctricos](https://youtu.be/-bpbRAIFFOg?si=M4rLAhSFXeTOeBGo)
+[Predicción de cruce de peatón-Simulador Carla](https://youtu.be/Nu7SIumINpE?si=gCPa49dRLIJpCGbN)
+[Comunicación V2I](https://youtu.be/4-ltseE1GMs?si=tByeLgwfBW5gv217)
+
 
