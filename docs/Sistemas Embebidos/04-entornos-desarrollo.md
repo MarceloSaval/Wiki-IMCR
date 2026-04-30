@@ -87,4 +87,4 @@ Vamos a ver cómo haríamos el clásico programa que hace parpadear un LED.
 * **Usa Arduino IDE si:** Estás aprendiendo las bases de la programación, vas a hacer un proyecto de un solo archivo o necesitas probar un sensor rápidamente.
 * **Usa PlatformIO si:** Estás desarrollando un producto que vas a vender o entregar, si trabajas en equipo (Git) o si tu proyecto usa más de 2 librerías externas. **Es la herramienta que te define como profesional.**
 
-[⬅ Anterior: Software: Mi primer programa en un microcontrolador](./03-mi-primer-programa.md) | [Volver al Índice](./00-indice.md) | [Siguiente: Mantenimiento y Fiabilidad ➔](./05-mantenimiento-fiabilidad.md)
+[⬅ Anterior: Software: Mi primer programa en un microcontrolador](./03-software-mi-primer-programa.md) | [Volver al Índice](./00-indice.md) | [Siguiente: Mantenimiento y Fiabilidad ➔](./05-mantenimiento-fiabilidad.md)

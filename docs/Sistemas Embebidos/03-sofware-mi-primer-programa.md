@@ -68,10 +68,11 @@ void loop() {
 ```
 ### Desglose del codigo secuencial
 
-  #### 2.1 Sección de cabecera y definición de constantes
+#### 2.1 Sección de cabecera y definición de constantes
   Casi idéntico a cualquier programa de C++, tenemos los includes de las librerías que necesitaremos (en algunos casos serán las propias de algún sensor o actuador). Para no usar "números mágicos" a lo largo del programa, definiremos aquí las constantes:
 
-  ```cpp
+```cpp
+
 #include <Arduino.h>
 
 const int LED_PIN = 2;
