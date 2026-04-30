@@ -7,6 +7,9 @@
 ## ¿Para qué sirve?
 
 
+## Usos reales (opcional)
+
+
 ## ¿WASM?
 
 
@@ -14,3 +17,9 @@
 
 
 ## Cloud != Edge
+
+
+## Casos en el futuro
+
+## Referencias y Bibliografías
+
