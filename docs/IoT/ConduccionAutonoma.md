@@ -24,6 +24,7 @@ A partir de 2010, la incorporación de sensores LIDAR y cámaras de alta resoluc
 Existen un total de 6 niveles de autonomía clasificados del 0 al 5,siendo el 0 el más dependiente de intervención humana y el 5 el más autónomo.
 
 1.**Nivel 0**:No existe ningún tipo de automatización en el vehículo. Pertenecen a este nivel los coches fabricados antes de la década de los 90.
+
 2.**Nivel 1**:Se incorpora algo de asistencia por parte del coche para reducir el número de tareas a realizar por parte del conductor. 
 Algunas de las asistencias ofrecidas son:
 
@@ -35,7 +36,8 @@ Algunas de las asistencias ofrecidas son:
 **Limitaciones**:El coche no puede controlar a la vez movimientos longitudinales (|) y laterales(-).
 
 3.**Nivel 2**:El coche ya puede controlar simultáneamente movimientos longitudinales (|) y laterales (-) y es capaz de acelerar o frenar manteniendo la distancia con el coche de 	delante y manteniéndose en el carril.
-	Algunas de las asistencias ofrecidas son:
+Algunas de las asistencias ofrecidas son:
+
 * Ayuda al aparcamiento sin que el conductor toque el volante
 * Asistente de conducción para reducir el estrés en los atascos	
 
@@ -67,6 +69,7 @@ El sensor emite un pulso de luz láser (generalmente infrarrojo) que viaja a la 
 ![Sensor lidar](../../images/ConduccionAutonoma/sensor_lidar.jpg)
 
 **Componentes**
+
 * Escáner emisor de luz
 * Sensor detector del impacto de la energía
 * Procesador que calcula el tiempo y mide la distancia
@@ -141,7 +144,9 @@ Suelen utilizarse para detectar y clasificar características específicas de la
 Se componen de:  
 **1.Capas de convolución:** utilizadas para extraer características a diferentes niveles de abstracción (características más generales en las primeras capas y más específicas en las capas posteriores).
 Cada capa de convolución va acompañada por una ***capa de pooling*** que reduce el tamaño de la salida antes de pasarlo a la siguiente capa. La capa de pooling más utilizada es ***MaxPooling***.  
+
 **2.Capas dense (Fully Conected):** se utilizan para la clasificación final,especificación.   
+
 **3.Capa de salida:** Produce las salidas finales de la red, representando las probabilidades de clasificación de diferentes clases de objetos.
 
 #### 1.4 Transformers
@@ -168,6 +173,7 @@ Este procesamiento consta de 2 fases principales y una opcional:
 
 ### 3. Mapas HD
 **Incluyen**:Características básicas de la carretera (intersecciones y señales de tráfico) + detalles de la superficie de la carretera ( bordes, cambios de elevación,líneas de carril y otros elementos dinámicos).  
+
 **Mapa convencional vs Mapa HD**:El mapa convencional proporciona una visión general de la red vial, mientras que el mapa HD está diseñado para proporcionar datos de precisión centimétrica, lo que permite a los vehículos conocer su posición exacta con una exactitud de pocos centímetros.Además,esta técnica de mapeo proporciona actualización de los mapas en tiempo real.Para ello se basan tanto en la información recibida de los sensores como de la obtenida con comunicaciones **V2I**.
 
 ## 4. Comunicaciones
@@ -219,6 +225,7 @@ Un Tesla en modo FSD atropelló a un motociclista mientras el conductor miraba s
 ### 2. Redundancia de sistemas
  Dada la imposibilidad de asegurar el funcionamiento sin fallos, es necesario desarrollar varios niveles de redundancia en todos los sistemas de control del vehículo críticos para la seguridad,es decir evitar el punto de fallo único (SPOF).
  Los sistemas redundantes deben cumplir lo siguiente:
+
  * Deben tener fuentes de alimentación separadas
  * No sobra con duplicar el sensor,hay que combinar sensores para suplir con unos las carencias o limitaciones de otros.
  * El sistema debe ser capaz de **detectar el fallo** pero seguir trabajando a pesar de este, es decir, debe ser **tolerante al fallo**.
@@ -230,11 +237,21 @@ En Estados Unidos ya circulan algunos vehículos de nivel 4 en áreas restringui
 China por su parte esta probando el funcionamiento de ese mismo nivel en zonas con tráfico denso,obteniendo de momento resultados positivos.  
 En Europa, el avance es más lento y de momento el máximo nivel de autonomía de coches en circulación es el 2,es decir,con coches algunas asistencias,pero donde el conductor todavía juega un papel esencial y debe estar muy atento.  
 Algunas de las **empresas más conocidas** son:
+
 * Tesla
 * Waymo (Google)
 * Aurora (Uber)
 * Cruise (General Motors)
 * Mobileye (Intel) 
 * Baidu (China,taxis autónomos)
+
+# 7. Videos demostrativos
+[Coche autonómo conduciendo por Barcelona]( https://youtu.be/-bpbRAIFFOg?si=M4rLAhSFXeTOeBGo)
+
+[Bloqueo debido a apagones eléctricos](https://youtube.com/shorts/sasCIiBckks?si=I_wLrKS2leZdeJiJ)
+
+[Predicción de cruce de peatón-Simulador Carla](https://youtu.be/Nu7SIumINpE?si=gCPa49dRLIJpCGbN)
+
+[Comunicación V2I](https://youtu.be/4-ltseE1GMs?si=tByeLgwfBW5gv217)
 
 
