@@ -11,8 +11,9 @@ Bienvenido a la guía completa sobre el estado actual de los sistemas embebidos,
 
 1. [Panorama Actual de los Sistemas Embebidos](./01-panorama-actual.md)
 2. [Hardware: Arduino vs. ESP32 en Producción](./02-hardware-esp32.md)
-3. [Entornos de Desarrollo: PlatformIO](./03-entornos-desarrollo.md)
-4. [El Enfoque IMCR: Mantenimiento y Fiabilidad](./04-mantenimiento-fiabilidad.md)
+3. [Software: Mi primer programa en un microcontrolador](./03-mi-primer-programa.md)
+4. [Entornos de Desarrollo: PlatformIO](./04-entornos-desarrollo.md)
+4. [El Enfoque IMCR: Mantenimiento y Fiabilidad](./05-mantenimiento-fiabilidad.md)
 
 ---
 *Documentación creada para la asignatura de Ingeniería de Mantenimiento de Computadores y Redes (IMCR). curso 2025-26*

@@ -52,4 +52,4 @@ Esta característica le ha permitido operar con baterías durante meses. Este pr
 ## 2.3 Microordenadores (Raspberry Pi y similares)
 Cuando necesitamos más potencia para TinyML o Edge Computing y el tiempo real estricto no es el factor más importante, puede que sea mejor dar el salto y utilizar microordenadores como la Raspberry Pi o similares, apoyados incluso con hardware dedicado como una TPU de Google.
 
-[⬅ Anterior: Panorama](./01-panorama-actual.md) | [Volver al Índice](./00-indice.md) | [Siguiente: Entornos de Desarrollo ➔](./03-entornos-desarrollo.md)
+[⬅ Anterior: Panorama](./01-panorama-actual.md) | [Volver al Índice](./00-indice.md) | [Siguiente: Software: Mi primer programa en un microcontrolador➔](./03-mi-primer-programa.md)
