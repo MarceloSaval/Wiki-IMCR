@@ -203,6 +203,8 @@ AWS fue el pionero de los entornos Cloud públicos y es el más usado actualment
 - El enfoque autogestionado, en el que el propio usuario crea las máquinas del clúster (intancias EC2) y las configura y gestiona manualmente.
 - El enfoque gestionado mediante __EKS (Elastic Kubernetes Service)__ en el cual __AWS__ se encarga de la gestión del ___Control Plane___ desplegando varias instancias en diferentes __AZs (zonas de disponibilidad)__ para garantizar alta disponibilidad y el __usuario__ gestiona los ___Worker Nodes___ en diferentes AZs de igual forma.
 
+## Taller
+En este [repositorio](https://github.com/spm73/kubernetes-workshop) podeis encontrar un taller para realizar el despliegue de un aula inteligente basada en Home Assistant con un módulo de visión artificial para poder poner en práctica los conceptos básicos de Kubernetes. En el repositorio podreis acceder a unas [diapositivas](https://view.genially.com/69de8ca748ebb6b0cef431de) que sintetizan los conceptos más importantes de Kubernetes y muestran unos ejemplos de manifiestos YAML.
 
 ## Referencias
 [Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
