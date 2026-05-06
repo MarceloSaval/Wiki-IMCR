@@ -336,10 +336,10 @@ Tener un "monorepo" (todo en uno) es fácil al principio, pero los submódulos r
 ####  Añadir un Submódulo
 
 Para incluir un repositorio externo en una carpeta específica de tu proyecto:
-Bash
 
+```
 git submodule add https://github.com/usuario/libreria.git carpeta-destino
-
+```
 ¿Qué sucede al ejecutar esto?
 
     Se crea el archivo .gitmodules: un archivo de texto que mapea la URL del proyecto con la carpeta local.
@@ -353,12 +353,10 @@ git submodule add https://github.com/usuario/libreria.git carpeta-destino
 Si clonas un repositorio que ya tiene submódulos, verás que las carpetas están vacías. Git no descarga los submódulos por defecto para ahorrar ancho de banda. Tienes dos opciones:
 
     Clonado "todo en uno":
-    Bash
 
     git clone --recursive https://github.com/usuario/proyecto-principal.git
 
     Si ya clonaste y las carpetas están vacías:
-    Bash
 
     git submodule update --init --recursive
 
