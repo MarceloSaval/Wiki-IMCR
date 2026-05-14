@@ -57,15 +57,18 @@ Es una arquitectura de seguridad basada en la nube que combina redes (SD-WAN) y 
 
 Es un código de bajo nivel en formato binario (bytecode) con el objetivo de tener ejecuciones mínimas y similares a C++ y Rust en un **sandbox**. En otras palabras, es "como un un Docker pero para funciones (no como entorno) y obligatoriamente ser ultraligero y rápido". Por ejemplo, en caso de BMW (empresa) se usa para modernizar el código legacy, el código que sea modular y que la gestión de datos sea ultrarápida.
 
-## Cloud != Edge
--> Ubicación de datos
--> Latencia
--> Ancho de banda
--> Seguridad y privacidad
--> Dependencia de internet
+## ¿Cloud o Edge? Fog Computing
+
+Edge soluciona los problemas más críticos como la rapidez, seguridad y control total de su entorno. Mientras que el Cloud Computing soluciona la escalabilidad, estabilidad y que sea distribuido en todos los lugares. En caso real de infraestructura se usan ambos, Fog Computing, es una capa intermedia que organiza y coordina los datos en cada capa, de nube y de nodos. Por ejemplo, una fábrica de Tesla, donde comprueba la calidad de un modelo de coche, y encuentra un fallo de coche, como se necesita detectar en menor tiempo posible, se encargará el edge (sensor) que enviará el error y parar la máquina (envía solo el error). El error recibe el nodo local de fábrica (Fog) que cogerá y modificará el dato para que la nube pueda comprender, y finalmente, subirá a la nube.
 
 ## Casos en el futuro
-## Caso de telecomunicaciones e infraestructura (???)
+
+En conclusión, este sistema distribuido tiene usos reales, como :
+- Enjambre de drones para coordinar una acción en tiempo real.
+- Juegos en nube (Gamepass o juegos multijugador), donde se ejecutan el juego con latencia muy baja.
+- Fábricas automatizadas, donde se produce y se autoregula.
+
+También en 2025-26, con los avances de sensores e IoT con la IA, tendrá mayor peso de la robótica y del sector industrial que tendrá en principio mayor empleabilidad como gestión de datos, ciberseguridad, arquitecto de sistema o en sitemas embebidos.
 
 ## Referencias y Bibliografías
 https://www.cisco.com/site/us/en/learn/topics/computing/what-is-edge-computing.html
