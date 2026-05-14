@@ -53,6 +53,9 @@ Es la versión minimizada de kubernetes (K8s es el tamaño usado en Google Cloud
 
 Es una arquitectura de seguridad basada en la nube que combina redes (SD-WAN) y ciberseguridad (ZTNA) para verificar continuamente cada conexión y dispositivo en el "borde" de la red (donde se generan los datos), sin confiar en nadie por defecto. Es decir, reemplaza las VPNs tardicionales por una autenticación estricta (Zero Trust). Y su funcionamiento es, verificar la id y el estado del dispositivo del usuario para dar acceso a los datos necesarios para su función, y así obtiene una seguridad distribuida.
 
+## WAsm
+
+Es un código de bajo nivel en formato binario (bytecode) con el objetivo de tener ejecuciones mínimas y similares a C++ y Rust en un **sandbox**. En otras palabras, es "como un un Docker pero para funciones (no como entorno) y obligatoriamente ser ultraligero y rápido". Por ejemplo, en caso de BMW (empresa) se usa para modernizar el código legacy, el código que sea modular y que la gestión de datos sea ultrarápida.
 
 ## Cloud != Edge
 -> Ubicación de datos
