@@ -1,4 +1,7 @@
 # Software-defined Networking
+
+Por Samuel Alan Hoad
+
 ## Introducción y Contexto 
 
 Históricamente, la gestión de redes se ha enfrentado a un desafío crítico: la rigidez del hardware propietario. En las redes tradicionales, los dispositivos como routers y conmutadores operan como "**cajas negras**" donde el plano de control (la inteligencia del dispositivo) y el plano de datos (el envío físico de paquetes) están estrechamente acoplados. Esto obligaba a los administradores a configurar cada nodo de forma individual y manual, un proceso complejo propenso a errores y limitado por las funciones específicas que el fabricante decidiera incluir en el *firmware*.
