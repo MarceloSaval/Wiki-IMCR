@@ -1,0 +1,3435 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://marcelosaval.github.io/Wiki-IMCR/SDN/SoftwareDefined_Networking/">
+      
+      
+        <link rel="prev" href="../../Retrocomputacion/ejemplo/">
+      
+      
+        <link rel="next" href="../../Seguridad/Anti-spoofing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Software-defined Networking - Wiki IMCR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-defined-networking" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki IMCR" class="md-header__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki IMCR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software-defined Networking
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome to IMCR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-tabs__link">
+          
+  
+  
+   Despliegue, Self Hosting y Mantenimiento de un Homelab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Bluetooth/Bluetooth/" class="md-tabs__link">
+          
+  
+  
+  Bluetooth
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-tabs__link">
+          
+  
+  
+  Cloud Computing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Architecture/RISC-V/" class="md-tabs__link">
+          
+  
+  
+  Computer Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Vision/ComputerVision/" class="md-tabs__link">
+          
+  
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-tabs__link">
+          
+  
+  
+  Deep Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Face%20detection/Comparativa/" class="md-tabs__link">
+          
+  
+  
+  Face detection
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Financiacion/Financiacion/" class="md-tabs__link">
+          
+  
+  
+  Financiacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-tabs__link">
+          
+  
+  
+  GPS and GeoFencing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Industria4_0/Industria4_0/" class="md-tabs__link">
+          
+  
+  
+  Industria4 0
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../IoT/ConduccionAutonoma/" class="md-tabs__link">
+          
+  
+  
+  IoT
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-tabs__link">
+          
+  
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Retrocomputacion/Retrocomputacion/" class="md-tabs__link">
+          
+  
+  
+  Retrocomputacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  SDN
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Seguridad/Anti-spoofing/" class="md-tabs__link">
+          
+  
+  
+  Seguridad
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sistemas%20Embebidos/00-indice/" class="md-tabs__link">
+          
+  
+  
+  Sistemas Embebidos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-tabs__link">
+          
+  
+  
+  Soft Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Vectorial%20DB/VectorialDB/" class="md-tabs__link">
+          
+  
+  
+  Vectorial DB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gitAndGithub/main/" class="md-tabs__link">
+          
+  
+  
+  gitAndGithub
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki IMCR" class="md-nav__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki IMCR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to IMCR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bluetooth
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bluetooth/Bluetooth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes y el Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Architecture/RISC-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura de Computadores: Arquitectura RISC-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/ComputerVision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/Segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención en Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/CNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Perceptr%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perceptron y función de activación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/PositionalEncoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Encoding y Arquitectura de Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/RNNs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recurrent Neural Networks (RNNs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Face detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Face detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Face%20detection/Comparativa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparativa de métodos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Financiacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Financiacion/Financiacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS and GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPS and GeoFencing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS &amp; GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industria4 0
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Industria4 0
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Industria4_0/Industria4_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IIoT y Cadena de Suministro Inteligente — Industria 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IoT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/ConduccionAutonoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conducción autonóma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Desarrollo%20sistema%20IoT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desarrollo de sistema IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Protocolo%20I2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo I2C y cómo conectar diferentes dispositivos idénticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje Supervisado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/DataAugmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Augmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Machine%20Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/M%C3%A9tricas%20de%20evaluaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas de evaluación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Overfitting%20Underfitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overfitting y Underfitting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/ReinforcementLearning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje por Refuerzo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Validacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrocomputacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retrocomputacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/Retrocomputacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Boy Advance + Introducción a la Ingeniería Inversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probando mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software-defined Networking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software-defined Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-y-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducción y Contexto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-sdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es SDN?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es SDN?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sdn-frente-a-las-redes-tradicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDN frente a las redes tradicionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-organiza-el-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo se organiza el control?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sdn-y-sus-tecnologias-hermanas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SDN y sus tecnologías hermanas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SDN y sus tecnologías hermanas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sd-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SD-WAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nfv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NFV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad-en-sdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad en SDN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-problema-del-spof-y-como-resolverlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El problema del SPOF y cómo resolverlo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-sdn-como-soporte-para-iot-y-smart-cities-en-imcr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redes SDN como soporte para IoT y smart cities en IMCR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redes SDN como soporte para IoT y smart cities en IMCR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-centralizada-de-una-infraestructura-heterogenea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión centralizada de una infraestructura heterogénea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalabilidad-y-gestion-del-iot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalabilidad y gestión del IoT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-y-resiliencia-urbana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y resiliencia urbana
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-casos-de-uso-reales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otros casos de uso reales
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-y-ecosistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herramientas y ecosistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusiones-y-tendencias-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusiones y tendencias futuras
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencias
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguridad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Seguridad/Anti-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anti-Spoofing en Reconocimiento Facial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/01-panorama-actual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Panorama Actual de los Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/02-hardware-esp32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hardware: Arduino vs ESP32 en Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/03-sofware-mi-primer-programa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Programación Avanzada: Del Bucle Secuencial al RTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/04-entornos-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Entornos de Desarrollo: De Prototipo a Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/05-mantenimiento-fiabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Mantenimiento y Fiabilidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soft Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Soft Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motivación como soft skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como hablar en público y hacer una presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vectorial DB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vectorial DB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vectorial%20DB/VectorialDB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases De Datos Vectoriales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gitAndGithub
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gitAndGithub
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitAndGithub/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ¿Qué es GIT?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="software-defined-networking">Software-defined Networking</h1>
+<p>Por Samuel Alan Hoad</p>
+<h2 id="introduccion-y-contexto">Introducción y Contexto</h2>
+<p>Históricamente, la gestión de redes se ha enfrentado a un desafío crítico: la rigidez del hardware propietario. En las redes tradicionales, los dispositivos como routers y conmutadores operan como "<strong>cajas negras</strong>" donde el plano de control (la inteligencia del dispositivo) y el plano de datos (el envío físico de paquetes) están estrechamente acoplados. Esto obligaba a los administradores a configurar cada nodo de forma individual y manual, un proceso complejo propenso a errores y limitado por las funciones específicas que el fabricante decidiera incluir en el <em>firmware</em>.</p>
+<p>Este paradigma resultaba insuficiente para las exigencias de flexibilidad y escalabilidad de las empresas modernas. El concepto de SDN surgió aproximadamente en 2013 como una solución para desacoplar el software del hardware, permitiendo que la red evolucione a la velocidad del software. Hoy en día, esta arquitectura es fundamental para habilitar servicios en la nube, el Internet de las Cosas (IoT) y el Edge Computing, ya que permite que los datos se muevan fácilmente entre ubicaciones distribuidas y que la infraestructura se ajuste dinámicamente según la demanda.</p>
+<h2 id="que-es-sdn">¿Qué es SDN?</h2>
+<p>La esencia de Software Defined Networking (SDN) es la separación estricta entre el plano de control y el plano de datos. Mientras que en una red clásica cada dispositivo toma sus propias decisiones de enrutamiento, en SDN el "cerebro" de la red se traslada a una plataforma de software centralizada que tiene una visión global de toda la infraestructura. El plano de datos permanece en los dispositivos físicos o virtuales, pero su función se reduce exclusivamente al reenvío de paquetes siguiendo las instrucciones dictadas desde arriba.</p>
+<p>Es vital no confundir SDN con conceptos relacionados pero distintos. SDN no es simplemente virtualización de red, la cual permite segmentar redes lógicas dentro de una física; SDN va más allá al centralizar el control del enrutamiento mediante un servidor. Tampoco debe equipararse estrictamente con NFV (<em>Network Functions Virtualization</em>), que se enfoca en virtualizar servicios específicos como cortafuegos o equilibradores de carga, aunque ambas tecnologías suelen trabajar juntas para optimizar la eficiencia y el control de la red.</p>
+<h3 id="arquitectura">Arquitectura</h3>
+<p>La arquitectura de una SDN se organiza de forma jerárquica en tres capas fundamentales que interactúan entre sí para ofrecer una red programable y abierta.</p>
+<p>En la base se encuentra la capa de infraestructura, compuesta por los <em>forwarding devices</em>. Estos pueden ser conmutadores de hardware tradicionales que soporten interfaces programables o conmutadores de software como Open vSwitch, que ofrecen mayor flexibilidad para nuevos comportamientos. Por encima se sitúa la capa de control, donde reside el <em>Network Operating System</em> (NOS) o controlador SDN. Este actúa como el sistema operativo de la red, gestionando servicios críticos como el seguimiento de hosts, el inventario de dispositivos y la topología de la red. Finalmente, la capa de aplicación contiene los programas que definen el comportamiento de la red, como aplicaciones de seguridad o de ingeniería de tráfico.</p>
+<p>La comunicación entre estas capas se realiza mediante interfaces especializadas:
+<strong><em>Northbound Interface</em></strong> : Conecta las aplicaciones con el controlador, permitiendo que los desarrolladores programen comportamientos de red de alto nivel mediante APIs, como interfaces RESTful.
+<strong><em>Southbound Interface</em></strong>: Facilita la comunicación entre el controlador y los dispositivos de hardware. El protocolo más extendido para este fin es <strong>OpenFlow</strong>, que estandariza cómo el controlador debe enviar las instrucciones de manejo de paquetes a los conmutadores.</p>
+<p><img alt="SDN Architecture" src="../../images/SDN/SDN-Arch.png" /></p>
+<h3 id="sdn-frente-a-las-redes-tradicionales">SDN frente a las redes tradicionales</h3>
+<p>La transición hacia SDN supone un cambio radical en la forma en que se concibe la infraestructura de red, como se resume en la siguiente comparativa.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Software Defined Networking (SDN)</strong></th>
+<th><strong>Networking Tradicional</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control</strong></td>
+<td>Instancia de control centralizada</td>
+<td>Instancias específicas en cada dispositivo</td>
+</tr>
+<tr>
+<td><strong>Integración</strong></td>
+<td>Separación entre hardware y control</td>
+<td>Control integrado en el hardware</td>
+</tr>
+<tr>
+<td><strong>Programabilidad</strong></td>
+<td>El plano de control es programable</td>
+<td>Plano de control propio/estático</td>
+</tr>
+<tr>
+<td><strong>Protocolos</strong></td>
+<td>Estándares abiertos (ej. OpenFlow)</td>
+<td>Específicos de los fabricantes</td>
+</tr>
+<tr>
+<td><strong>Configuración</strong></td>
+<td>Centralizada y basada en políticas</td>
+<td>Individual nodo por nodo</td>
+</tr>
+<tr>
+<td><strong>Escalabilidad</strong></td>
+<td>Flexible y fácil de escalar</td>
+<td>Arquitectura estática difícil de modificar</td>
+</tr>
+</tbody>
+</table>
+<p>Esta transición elimina la dependencia de fabricantes específicos (<em>vendor lock-in</em>), ya que los administradores pueden usar un solo protocolo para comunicarse con hardware de distintos proveedores a través de un controlador abierto. Además, reduce costes operativos y de hardware, ya que los dispositivos de reenvío requieren menos inteligencia propia y el mantenimiento se simplifica mediante la gestión centralizada.</p>
+<h3 id="como-se-organiza-el-control">¿Cómo se organiza el control?</h3>
+<p>La implementación de SDN puede variar según cómo se distribuya la inteligencia y cómo se propaguen las reglas de flujo.</p>
+<p>En primer lugar, podemos distinguir entre SDN simétrica y asimétrica. El modelo simétrico busca la máxima centralización en una única unidad de control para evitar redundancias, mientras que el asimétrico distribuye las tareas entre varias unidades para que los sistemas puedan seguir operando mínimamente en caso de fallo, a costa de una mayor complejidad de gestión.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Característica</strong></th>
+<th><strong>SDN Simétrica</strong></th>
+<th><strong>SDN Asimétrica</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control</strong></td>
+<td>Centralización máxima</td>
+<td>Distribución del control</td>
+</tr>
+<tr>
+<td><strong>Eficiencia</strong></td>
+<td>Evita redundancias de información</td>
+<td>Presenta redundancias innecesarias</td>
+</tr>
+<tr>
+<td><strong>Resiliencia</strong></td>
+<td>Depende de la estabilidad de la unidad central</td>
+<td>Los sistemas funcionan si cae el control central</td>
+</tr>
+</tbody>
+</table>
+<p>Por otro lado, la forma en que el plano de control envía instrucciones a los dispositivos de red define los modelos proactivo y reactivo. El modelo proactivo envía todas las reglas a los nodos de forma anticipada (vía <em>broadcast/multicast</em>), lo que simplifica la implementación pero limita la escalabilidad al aumentar la carga de la red con cada nuevo nodo. El modelo reactivo solo envía información a los dispositivos implicados cuando estos encuentran un paquete desconocido y consultan al controlador; esto es más eficiente para redes grandes, aunque puede introducir latencia inicial.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Característica</strong></th>
+<th><strong>SDN Proactiva</strong></th>
+<th><strong>SDN Reactiva</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mensajes</strong></td>
+<td>Broadcast / Multicast</td>
+<td>Tablas lookup bajo demanda</td>
+</tr>
+<tr>
+<td><strong>Implementación</strong></td>
+<td>Fácil de implementar</td>
+<td>Más compleja de gestionar</td>
+</tr>
+<tr>
+<td><strong>Escalabilidad</strong></td>
+<td>Limitada por la carga de la red</td>
+<td>Mejor para redes de gran tamaño</td>
+</tr>
+</tbody>
+</table>
+<p>En la práctica, muchas redes definidas por software no se adhieren estrictamente a un solo modelo, sino que suelen combinar elementos de diferentes enfoques para equilibrar simplicidad, rendimiento y redundancia.</p>
+<h2 id="sdn-y-sus-tecnologias-hermanas">SDN y sus tecnologías hermanas</h2>
+<p>SDN actúa a menudo como un <em>overlay</em>, lo que significa que puede ejecutar redes virtuales sobre la infraestructura física existente mediante túneles dinámicos, dejando el hardware subyacente intacto. Esta capacidad de abstracción es lo que permite una flexibilidad sin precedentes en entornos empresariales.</p>
+<h3 id="sd-wan">SD-WAN</h3>
+<p>Un ejemplo claro de su aplicación es la SD-WAN (Red de Área Amplia Definida por Software). Mientras que una WAN tradicional depende de circuitos físicos rígidos como MPLS, una SD-WAN permite a una empresa con múltiples sedes gestionar el tráfico de forma centralizada a través de diversos tipos de conectividad (VPN, MPLS, internet), priorizando aplicaciones críticas automáticamente según el estado de la red.</p>
+<p><img alt="SD-WAN_vs_WAN" src="../../images/SDN/traditional-wan-vs-sd-wan.jpg" /></p>
+<h3 id="nfv">NFV</h3>
+<p>La NFV (Virtualización de Funciones de Red) complementa a SDN al permitir que las funciones de red como <em>firewalls</em>, se trasladen de dispositivos de hardware costosos a servidores estándar o incluso a los propios servidores del cliente. Lejos de excluirse, estas tres tecnologías se combinan: SDN proporciona el control centralizado del enrutamiento, NFV virtualiza los servicios y SD-WAN aplica estos beneficios a la conectividad de larga distancia.</p>
+<h2 id="seguridad-en-sdn">Seguridad en SDN</h2>
+<p>La arquitectura SDN ofrece ventajas de seguridad disruptivas en comparación con las redes tradicionales. Al tener una visibilidad holística de toda la red, los administradores pueden detectar amenazas de forma más rápida y definir rutas seguras desde una ubicación central.</p>
+<p>Sin embargo, esta centralización también crea nuevas superficies de ataque. El controlador SDN se convierte en el objetivo prioritario para un atacante, ya que comprometerlo significaría ganar el control total de la infraestructura. Por lo tanto, asegurar la integridad del controlador es una tarea crítica en cualquier despliegue de SDN.</p>
+<p>Como herramienta de defensa activa, SDN permite implementar microsegmentación, creando zonas de seguridad aisladas para diferentes cargas de trabajo. Esto facilita, por ejemplo, poner en cuarentena inmediata dispositivos infectados para que no propaguen el malware al resto de la red o ajustar dinámicamente las políticas de seguridad en los conmutadores para responder a ataques de denegación de servicio (DDoS).</p>
+<h2 id="el-problema-del-spof-y-como-resolverlo">El problema del SPOF y cómo resolverlo</h2>
+<p>A pesar de sus beneficios, el diseño lógicamente centralizado de SDN introduce un riesgo crítico de ingeniería: el punto único de falla (SPOF). Si el controlador central cae, toda la red podría perder su capacidad de gestión.</p>
+<p>Para resolver esto, no se utiliza un único controlador físico, sino un sistema de clustering o teaming. Esta técnica consiste en agrupar varios sistemas que trabajan en conjunto para equilibrar la carga de trabajo y asegurar que, si uno de ellos falla, los demás sigan activos y funcionales. Además, las redes grandes pueden dividirse en regiones, cada una con su propio controlador regional, que se comunican entre sí mediante protocolos de comunicación "Este-Oeste".</p>
+<h2 id="redes-sdn-como-soporte-para-iot-y-smart-cities-en-imcr">Redes SDN como soporte para IoT y smart cities en IMCR</h2>
+<p>Las redes definidas por software han emergido como un paradigma clave en la gestión moderna de infraestructuras de red, especialmente en entornos caracterizados por una alta heterogeneidad y dinamismo, como el Internet de las Cosas (IoT). En estos escenarios, donde coexisten numerosos dispositivos con capacidades, protocolos y requisitos diversos, SDN permite desacoplar el plano de control del plano de datos, facilitando una gestión centralizada, programable y adaptable. Esto resulta fundamental para optimizar el rendimiento, mejorar la seguridad y simplificar las tareas de mantenimiento a lo largo del ciclo de vida de los sistemas, especialmente ante el creciente volumen de datos generado por dispositivos IoT.</p>
+<p>En sistemas IoT de pequeña o mediana escala, como los abordados en la asignatura IMCR, la adopción de una arquitectura completa basada en SDN puede ser innecesaria debido a la simplicidad y alcance reducido de la infraestructura. En estos casos, soluciones más ligeras permiten cubrir de manera eficiente los requisitos de gestión y operación, al tiempo que facilitan la comprensión de los conceptos de control centralizado y monitorización de la red. No obstante, los principios de SDN siguen siendo relevantes y pueden aplicarse en escenarios de mayor complejidad, escalabilidad o control avanzado.</p>
+<p>Un caso particularmente representativo de la aplicación conjunta de SDN e IoT es el de las <em>smart cities</em>. En este contexto, SDN actúa como la infraestructura de soporte que permite gestionar de forma eficiente los servicios urbanos basados en datos, como el tráfico, el alumbrado público o la monitorización ambiental. La necesidad de operar en tiempo real, junto con los requisitos de calidad de servicio y seguridad, hace imprescindible el uso de arquitecturas de red flexibles y programables frente a los enfoques tradicionales.</p>
+<h3 id="gestion-centralizada-de-una-infraestructura-heterogenea">Gestión centralizada de una infraestructura heterogénea</h3>
+<p>Las <em>smart cities</em> integran dispositivos y sistemas muy diversos, lo que introduce complejidad en la operación de la red. SDN aborda este problema mediante un modelo de control centralizado y abstracto.
+Control lógico unificado: Permite aplicar políticas de red de forma coherente sin configuraciones manuales dispositivo a dispositivo.
+Abstracción del hardware: Facilita la interoperabilidad entre equipos de distintos fabricantes mediante interfaces estandarizadas.
+Orquestación de recursos: Posibilita la asignación dinámica de recursos en función de las necesidades de los distintos servicios urbanos.</p>
+<h3 id="escalabilidad-y-gestion-del-iot">Escalabilidad y gestión del IoT</h3>
+<p>El crecimiento masivo de dispositivos IoT plantea retos de escalabilidad y eficiencia.
+- <strong>Dispositivos simplificados</strong>: La inteligencia de red se traslada al controlador, reduciendo la complejidad de los nodos de campo.
+- <strong>Segmentación de red</strong>: El uso de técnicas como network slicing permite aislar y priorizar distintos tipos de tráfico sobre una misma infraestructura.</p>
+<h3 id="seguridad-y-resiliencia-urbana">Seguridad y resiliencia urbana</h3>
+<p>La protección de la infraestructura y de los datos es un aspecto crítico en entornos urbanos inteligentes.
+- <strong>Monitorización global</strong>: Permite detectar anomalías mediante una visión centralizada del tráfico.
+- <strong>Respuesta ante incidentes</strong>: Facilita el aislamiento rápido de dispositivos comprometidos.
+- <strong>Servicios de seguridad virtualizados</strong>: Posibilita integrar mecanismos de protección sin necesidad de hardware adicional. </p>
+<p>Aunque las Smart Cities representan un ejemplo completo y de gran escala de la aplicación de SDN en entornos IoT, los principios y ventajas de esta arquitectura también se trasladan a otros escenarios reales de ingeniería de redes.</p>
+<h3 id="otros-casos-de-uso-reales">Otros casos de uso reales</h3>
+<p>El escenario donde SDN ha tenido mayor impacto es el de los centros de datos. Aquí, SDN mejora tres dimensiones clave: permite una gestión eficiente del tráfico interno, acelera el aprovisionamiento de nuevos servicios y facilita el escalado elástico de recursos al añadir o quitar máquinas virtuales sin necesidad de reconfiguraciones manuales costosas.
+Otros ámbitos de aplicación incluyen:
+- <strong>SD-WAN empresarial</strong>: Conecta sedes remotas de forma flexible y eficiente.
+- <strong>Telecomunicaciones y 5G</strong>: Permite a los proveedores ofrecer "rebanadas" de red (network slicing) y ancho de banda bajo demanda a sus clientes.</p>
+<h2 id="herramientas-y-ecosistema">Herramientas y ecosistema</h2>
+<p>Para implementar y gestionar una infraestructura SDN, existe un ecosistema de tecnologías y protocolos:
+- <strong>Protocolos de comunicación</strong>: OpenFlow (el estándar más relevante), NETCONF, BGP, XMPP y OVSDB.
+- <strong>Controladores y Software</strong>: Open vSwitch (para conmutación por software) y controladores que ofrecen servicios de topología e inventario.
+- <strong>Interfaces de programación</strong>: APIs basadas en Java o interfaces RESTful (Northbound) para el desarrollo de aplicaciones nativas o integraciones en la nube.</p>
+<h2 id="conclusiones-y-tendencias-futuras">Conclusiones y tendencias futuras</h2>
+<p>En la actualidad, SDN representa el estándar para redes flexibles, escalables y orientadas a la nube. La capacidad de gestionar la red como un recurso elástico ha transformado la infraestructura en algo mucho más parecido a los recursos de cómputo actuales. De cara al futuro, se anticipa una integración cada vez mayor con la Inteligencia Artificial, permitiendo que los controladores SDN tomen decisiones aún más inteligentes y automatizadas sobre el flujo de datos y la seguridad, consolidando la visión de centros de datos totalmente definidos por software (SDDC). Asimismo, SDN se proyecta como una tecnología clave para habilitar la gestión eficiente y centralizada de servicios urbanos en Smart Cities, facilitando la adaptación dinámica a las demandas de la ciudad y mejorando la resiliencia y seguridad de sus infraestructuras.</p>
+<h2 id="referencias">Referencias</h2>
+<p>David Mahler, "Introduction to SDN (Software-defined Networking)" (video).</p>
+<p>Broadcom/VMware, "What is Software-Defined Networking (SDN)?".</p>
+<p>IONOS, "¿Qué es SDN (Software Defined Networking)?".</p>
+<p>IBM, "¿Qué es la red definida por el software (SDN)?".</p>
+<p>Sahrish Khan Tayyaba, Software Defined Network (SDN) Based Internet of Things (IoT):A Road Ahead.</p>
+<p>IBM, "¿Qué es la red definida por software (SDN)?".</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026 <a href="https://github.com/MarceloSaval" target="_blank" rel="noopener">Marcelo Saval</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.lin", "content.code.annotation", "content.code.copy", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

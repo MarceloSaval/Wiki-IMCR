@@ -1,0 +1,3191 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://marcelosaval.github.io/Wiki-IMCR/Vectorial%20DB/VectorialDB/">
+      
+      
+        <link rel="prev" href="../../Soft%20Skills/presentacion/">
+      
+      
+        <link rel="next" href="../../gitAndGithub/main/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Bases De Datos Vectoriales - Wiki IMCR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bases-de-datos-vectoriales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki IMCR" class="md-header__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki IMCR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bases De Datos Vectoriales
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome to IMCR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-tabs__link">
+          
+  
+  
+   Despliegue, Self Hosting y Mantenimiento de un Homelab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Bluetooth/Bluetooth/" class="md-tabs__link">
+          
+  
+  
+  Bluetooth
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-tabs__link">
+          
+  
+  
+  Cloud Computing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Architecture/RISC-V/" class="md-tabs__link">
+          
+  
+  
+  Computer Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Vision/ComputerVision/" class="md-tabs__link">
+          
+  
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-tabs__link">
+          
+  
+  
+  Deep Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Face%20detection/Comparativa/" class="md-tabs__link">
+          
+  
+  
+  Face detection
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Financiacion/Financiacion/" class="md-tabs__link">
+          
+  
+  
+  Financiacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-tabs__link">
+          
+  
+  
+  GPS and GeoFencing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Industria4_0/Industria4_0/" class="md-tabs__link">
+          
+  
+  
+  Industria4 0
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../IoT/ConduccionAutonoma/" class="md-tabs__link">
+          
+  
+  
+  IoT
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-tabs__link">
+          
+  
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Retrocomputacion/Retrocomputacion/" class="md-tabs__link">
+          
+  
+  
+  Retrocomputacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SDN/SoftwareDefined_Networking/" class="md-tabs__link">
+          
+  
+  
+  SDN
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Seguridad/Anti-spoofing/" class="md-tabs__link">
+          
+  
+  
+  Seguridad
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sistemas%20Embebidos/00-indice/" class="md-tabs__link">
+          
+  
+  
+  Sistemas Embebidos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-tabs__link">
+          
+  
+  
+  Soft Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Vectorial DB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gitAndGithub/main/" class="md-tabs__link">
+          
+  
+  
+  gitAndGithub
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki IMCR" class="md-nav__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki IMCR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to IMCR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bluetooth
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bluetooth/Bluetooth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes y el Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Architecture/RISC-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura de Computadores: Arquitectura RISC-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/ComputerVision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/Segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención en Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/CNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Perceptr%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perceptron y función de activación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/PositionalEncoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Encoding y Arquitectura de Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/RNNs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recurrent Neural Networks (RNNs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Face detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Face detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Face%20detection/Comparativa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparativa de métodos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Financiacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Financiacion/Financiacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS and GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPS and GeoFencing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS &amp; GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industria4 0
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Industria4 0
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Industria4_0/Industria4_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IIoT y Cadena de Suministro Inteligente — Industria 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IoT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/ConduccionAutonoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conducción autonóma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Desarrollo%20sistema%20IoT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desarrollo de sistema IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Protocolo%20I2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo I2C y cómo conectar diferentes dispositivos idénticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje Supervisado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/DataAugmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Augmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Machine%20Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/M%C3%A9tricas%20de%20evaluaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas de evaluación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Overfitting%20Underfitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overfitting y Underfitting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/ReinforcementLearning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje por Refuerzo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Validacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrocomputacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retrocomputacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/Retrocomputacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Boy Advance + Introducción a la Ingeniería Inversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probando mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDN/SoftwareDefined_Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software-defined Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguridad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Seguridad/Anti-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anti-Spoofing en Reconocimiento Facial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/01-panorama-actual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Panorama Actual de los Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/02-hardware-esp32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hardware: Arduino vs ESP32 en Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/03-sofware-mi-primer-programa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Programación Avanzada: Del Bucle Secuencial al RTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/04-entornos-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Entornos de Desarrollo: De Prototipo a Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/05-mantenimiento-fiabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Mantenimiento y Fiabilidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soft Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Soft Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motivación como soft skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como hablar en público y hacer una presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vectorial DB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vectorial DB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases De Datos Vectoriales
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases De Datos Vectoriales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-base-de-datos-vectorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es una base de datos vectorial?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gitAndGithub
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gitAndGithub
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitAndGithub/main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ¿Qué es GIT?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="bases-de-datos-vectoriales">Bases De Datos Vectoriales</h1>
+<p>Por Nicolás Ildefonso Sirvent Orts</p>
+<h2 id="que-es-una-base-de-datos-vectorial">¿Qué es una base de datos vectorial?</h2>
+<p>Una base de datos vectorial es un sistema de almacenamiento diseñado para guardar y buscar información basándose en su significado profundo y no solo en palabras clave exactas. En lugar de tablas tradicionales, organiza los datos (como texto, imágenes o audio) como coordenadas matemáticas en un espacio de miles de dimensiones. Su utilidad principal reside en la búsqueda semántica: permite que las aplicaciones entiendan el contexto, conecten ideas similares y sirvan como una memoria externa ultra rápida para modelos de inteligencia artificial, siendo la pieza clave detrás de los buscadores inteligentes, sistemas de recomendación y asistentes como ChatGPT.</p>
+<p>Para entender como es que funcionan estas bases de datos con esteroides primero tenemos que entender el valor con el que trabajan.</p>
+<h1 id="que-es-un-embedding">¿Qué es un embedding?</h1>
+<p>Un embedding es un vector (lista de numeros) que sirve para representar a un objeto, como una palabra o un texto, de forma que <strong>un modelo</strong> pueda entenderlo. Estos números no se eligen al azar, funcionan como una "firma numérica" o una dirección en un mapa gigante. Lo más importante de un embedding es que, si dos objetos se parecen en el mundo real, sus listas de números también serán numéricamente parecidas.</p>
+<p>Bueno ya sabemos que un embedding es un vector númerico, pero, ¿que criterio se usa en su creación para que sean capaces de calificar?</p>
+<p>La respuesta corta es, ninguno. 
+Un embedding es el resultado de las neuronas de la última capa oculta de una red neuronal ya entrenada. Los modelos que emplean este tipo de bases de datos, se caraterizan por ser capaces de clusterizar (agrupar) datos teniendo en cuenta el contexto en el que se encuentran. No es lo mismo decir que: "estoy sentado en un <strong>banco</strong>" a "voy a robar un <strong>banco</strong>". Aunque cabe la posibilidad de que la segunda se refiera a un banco de un parque, en los entrenamientos no se suele dar este significado, por lo que los embeddings de estos sinonimos serán completamente diferentes.</p>
+<h3 id="trade-off">Trade-off</h3>
+<p>Este vector nos ayuda mucho al representar las palabras de forma numérica. No obstante, depende completamente del clustering que haga el modelo, esto implica que este embedding será compatible únicamente con un modelo equivalente entrenado por el mismo dataset. Por lo que un embedding realmente es, una interpretación de información de un agente en concreto impulsada por un entrenamiento posterior.</p>
+<p>Sabemos que és un embedding, pero que puedo hacer con una secuencia de números que a simple vista parecen puestos por un randomizer.</p>
+<h1 id="similitud-entre-vectores">Similitud entre vectores</h1>
+<p>En una base de datos vectorial, la similitud entre dos objetos se define por la proximidad geométrica de sus embeddings. Debido a que la red neuronal asigna coordenadas basadas en la relación semántica, los conceptos con significados o características análogas generan vectores que se agrupan en regiones cercanas del espacio latente.
+Para cuantificar esta semejanza, se emplean diferentes métricas matemáticas que determinan qué tan cerca está un vector de otro:</p>
+<h3 id="similitud-del-coseno-cos-theta">Similitud del Coseno (<span class="arithmatex">\(\cos \theta\)</span>)</h3>
+<p>Esta métrica calcula el coseno del ángulo formado por dos vectores. A diferencia de otras medidas, no considera la longitud (magnitud) de los vectores, sino únicamente su dirección.
+- Uso principal: Procesamiento de Lenguaje Natural (NLP) y búsqueda semántica.
+- Conveniencia: Es ideal cuando el contenido es lo importante y no su extensión. Por ejemplo, permite que un artículo largo y un resumen corto sobre el mismo tema sean considerados similares.
+- Ecuación:$<span class="arithmatex">\(\text{sim}(\mathbf{A}, \mathbf{B}) = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}\)</span>$</p>
+<p><img alt="No se pudo cargar la imagen" src="data:image/png;base64,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" /></p>
+<h3 id="distancia-euclidea-l2">Distancia Euclídea (<span class="arithmatex">\(L2\)</span>)</h3>
+<p>Mide la distancia física en línea recta entre dos puntos en el espacio multidimensional. Es la métrica más intuitiva, pero es muy sensible a la magnitud de los datos.
+- Uso principal: Visión artificial, biometría y detección de duplicados exactos.
+- Conveniencia: Es preferible cuando las diferencias exactas en los valores de las dimensiones son críticas, como en el reconocimiento facial, donde pequeños cambios en las coordenadas representan rasgos distintos.
+- Ecuación:$<span class="arithmatex">\(d(\mathbf{A}, \mathbf{B}) = \sqrt{\sum_{i=1}^{n} (a_i - b_i)^2}\)</span>$</p>
+<p><img alt="No se pudo cargar la imagen" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPsAAADJCAMAAADSHrQyAAAAw1BMVEX////Ozs4AdskAAACHteCty+mlxueRuuLCwsIAesvS0tLHx8cAfczz8/OoqKgAeMrt9fvZ2dm2trb5+fnu7u7l5eVHmNWrq6uTk5Py8vL2+/2bm5tdXV05OTm61u7e3t6KioqMrc1tn814eHhsbGwiIiKAgIBSUlJipdq6urpISEiVlZU1NTVFRUV9fX1XV1djY2MsLCwcHBwACh8Le8BCPDQAaba/ydCTssw5js1TmtHC3PJUn9oTCgAAYJwAgs4mIBqhcR5UAAAKZklEQVR4nO2dC3+iOBeHj2btIlRabiMOdaSL1bVOW9u9dHZndvf9/p/qTQJYkCSARpoCZ37TVv+Yk4fcgWMAeKa3XRDYoO2CwNTMcM8uRRCYmhnu2aUIAlMzwz27FEFgama4Z5ciCEzNDPfsUgSBqZnhnl2KIDA1M9yzSxEEpmaGe3YpgsDUzHDPLkUQmJoZ7tmlCAJTM8M9uxRBYGpmWCq7PuCY1nZBcNNCzcJy5AkCU5MdZgZXYpi1qHN0ufv3ZX/iKkxbufWOL3H/rsJTXZZ1zePF7t9T0CPeJ3g2ndb9hMD9uwrr+u0X1f6EmuxOCuIm/wtWfPPe4jnhm4rsxg39ZW21+4W5vSke4Nv3+OfSzrwVmjwnfFOR3QzJT8cHiB5gOS/qsxmpGShb1NPaXYSa7GFAfmoTgK9xFxaa0VNm8mJCgCuDhcANzacwfm+z4znhm7rsQBq+R1/jeelqmT0CaQDBGtb4hNzFp0erOSM4Jl9NCP421eNOLwxxuWY7co+8eApgjk/BY1zZ7dy5qWYqstsUx3UhxEB6PLtdhuRnUvE3z7Bv7ihOJO4j6pmK7AvavaEVPIe4stO3NNKxQxi3ARjc4RMUV4SVH38m0nhO+KYiezxRWQU+RIE/IX8byRnYJdO3x615Qxv4Nh3n0BELOSXZw4NCHGxwJ0D/ilFJbadDgLlIhAVjFlBqSrI7+THdQPfzr7QPmM7ITw1XfeMF/+Gjh/kLPR3LY1axSrKDnVuaWAY20tK9ePI2CEGbkzpO3jdIo9BDXkoiU5Mdtszp+ST5bU3zlzbcR25CIlOUnb2E4dmszsEV3L+r0D9HHZtjeKckJTBlEHmCjRCKWELFpASmCiJPcBCxWVGomtTHvTehbyi7qR8KlZP6cPcm9sL1p98I+wlJCUwNRJ4wuhr//gdCWkGonpTAlEDkCNefhsNfYfTnz6ckJTAFEHnCaDi+/AJwMewcOy30z9BF9tGYFjp0j/01LXToHPvFvtChY+y4pV+lhQ7dYsdj+uW3zOvusMeFnp2IdoY9aelZoSPsZEz/8Rm6yH4xTLv3rrFfZ8b0jrHjlj7+whTazp4tdOgW+yg7kYMusR8UOnSI/eIqX+jQGfZioUNX2C/GhUKHTrDrzEKHTrDfjsf/FQsdJLMreG9Cf/1rPPzbYOYs8wn9dvyLzhIqOlfy3sToktXSi59oX52nLZ0bHNFq9ngiV22i3y72tHtvJ7u7m0+ZArFROpFrJ3vuCe+8kBnTW8q+QBwhu2RrKbu5Zgr5iVwb2RcbuAlYwii/ZGsh+43phtmAjlQozN7bxz43IX3qPyeMhocTudax0wfbp+tDgbVkax37nERvZJs7FQ6vyFX38ZHYEZnU4ObuZATOOr197AMav2W/PQ2sj4pX5Kr7+EjskQmT5UsS50Ls+q8r5sWZY9i5K79a8fJ13NcTfHMKZrgPZBhdXfLW6fXZpdq513Gkpf/NLPSqSX1YdtK9f+deNmoze9K9n5ZUwu74EYkKeiiJkZjSmYVZKSr6nOxkIvf95KQS9hBI4LdVEuOvG4DwAHNniw+r4f4o4fpHOqZLYTdhHdAAYMvfPnED/QPQEHno3gVXKwaPH+P+GAG39PF3GUml7X2CJjQAeEdigZOabz7dJLZOA0vIjNLA/FpZFTkbO31cSk5SKfuUlCOyXHIKED/6lYTMhiTIZP/NEc3em9BvL8eX3/SicIQPcm+CTo+jcH81aIK4PR4t7bvNG7sgYPIc5f75R34iJ6fcH3FlXsXLw/sN74P07Hiku3srd66dgb0we5fD7j5oJqJjVySawC4De0diZd+D/a17l+Rjz47/0fj3rQsel96DGTyG5K/m2VnrdCnsjxjFJ5cGduto+cwLGV0gA1waC+8s0KQkJl4uO3udLod9ADYJcp/YxHgfXCxx26DDnTbdTEsWd1LZmRdnpI1xZpU1+qDadFZCvnL2WmzpMnzk1jKTwqFlgsDksXMK/WQf6l+3OQh2kOhDeXZS6N9Ywuk+FGePn3s/7RIFV1CbfVQMdpDoQ2X2/ZjePfa37r1r7LxgB4k+VGXPjemdYt+HNZ2elEBQkv1wnd4ddnGwgxwf1NRjH2XDmk5LqkRQjf2gpZ+SVKmgGDt7ydYBdp1Z6Ecl9eHYb3nrdFXZZd2b0F8/ja8+vZYFO0gU1ImbqBrsIFFQpM7TMf1VSlLVBTXY44ncmRC5ggrsaffeQXZc6OPqwQ4ShXdnz4zpXWPPzt67xZ6fyHWK/WKYW7J1iL0we+8Oe3Gd3hV21pKtI+zHBztIFN6FnfHkzHHuPxy7zruf3n72E4MdJAqNs4/GpwU7SBQaZj892EGi0Cw7Xaef6UmC+kKT7En33jQiV2iQPe3eu8buZe6yKcP+5feLU5ISWOYzNkL//HuZftGQxK0+ThL0/yH0Flx7JnaP7m7w38WXEbXbEccaFmiunGJ2q7OX35vQt9TL5dUwtvGQY80Kfzay34RLnLz8lNovP3GsWeHnf04ud65lHrMmW3q8JcGf6DcrWKTYy3NVgb3WDnPsZ5Ob7ucdw2UL1ZLaW1Rr1ymNucky10v9vdmbOI2pRV7ZEXkLWJXymJbFsQbZB6uSAwr2cISXGtYg+7x2cAErAIPhxdvMYKGV9yXWBndjmZDG5tg9VimKzb2r4mVjT+ZTY8o4Nm+B4T2bi8wOv82xm/FWmxMzWOACZURZbQLSH9jZ8kPFqlLw4uEucbmDkLQoXbAVuYZ7j7sA1rQH9YQZls6+pJGUZHtttIK74h7Ctms8kClOFnddTLPwzsBJIlDBDS0bpf2psbfkfJDKjuLwVDNEx5Ecyz6nOtlrGU9hTJJFKxdAFsIqwoVPqu4mBYiKwxzLi0MjUCHCZyC4T94y9/YWvaonsYqO0zD7Mx2x3GQraYBFkPv2IZgBwkdEKzyu77+J67HY2bG8kIB7PBWa2sm54xnZyN4hbWrWMPvXdLSept8IsM2x05D5OLR8nrJHFdgNnW7GrcXJPzAnRMRsj37N15a0qabZ12kN3+Emb5Gz7+fZScj8jDb3PfuyGG1d8IICZx3BLKQv/JDnfoaMBWa3zPiFMMPS2UPi1XnQARnJ9toJe5CcgiX+bdMqu2d/LobOF7xs8CzADOIKEtj8nV1Jw98G8clsml0jXbuHPH/rg0+ZEnaUdO24mzdQSP7aszPiqEVeTJ10mRWs6b4uBrHsGQzsGDZhd7SkdC3bRbRhpOyD6DANoReTrLXDklwQ07ZoqjfKHh7GRKftPe6eNi9Jd4e7xeRk7BjfFiHwUnmFjPt60t03uY67z73yzNWKTu+c+BQsfZjQcVo3I5823wWj2D/oWgaskPl2srrwAjPMT2F3tbzUj89ukh0GtRbwG2YdVubCfTVBYGpmuGeXIghMzQxLZVdwv4mGBCX3m2hIEJiaGe7ZpQgCUzPDPbsUQWBqZrhnlyIITM0M9+xSBIGpmeGeXYogMDUz3LNLEQSmZoZ7dimCwNTMcM8uRRCYmhnu2aUIAlMzwz27FEFgama4Z5ciCEzNDDfDrkpYzNkE+D9RUZi1yslVjgAAAABJRU5ErkJggg==" /></p>
+<h3 id="producto-escalar-dot-product">Producto Escalar (Dot Product)</h3>
+<p>Multiplica las magnitudes de dos vectores por el coseno del ángulo que los separa. A diferencia del coseno, esta métrica sí se ve afectada por la longitud de los vectores.
+- Uso principal: Sistemas de recomendación y algoritmos de ranking.
+- Conveniencia: Se utiliza cuando tanto la dirección del interés como la "intensidad" o relevancia del objeto son importantes. Por ejemplo, en una tienda online, puede priorizar productos que tienen más interacciones (magnitud alta).
+- Ecuación:$<span class="arithmatex">\(\mathbf{A} \cdot \mathbf{B} = \sum_{i=1}^{n} a_i b_i\)</span>$</p>
+<p><img alt="No se pudo cargar la imagen" src="data:image/png;base64,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" /></p>
+<h3 id="enlace-de-interes">Enlace de Interés</h3>
+<p>https://projector.tensorflow.org/</p>
+<h1 id="indexacion-algoritmo-hnsw">Indexación: Algoritmo HNSW</h1>
+<p>Si tenemos 10 millones de vectores de 1536 dimensiones, compararlos uno por uno contra una consulta (búsqueda por fuerza bruta o Flat Search) requeriría un tiempo de procesamiento inasumible para aplicaciones en tiempo real. Necesitamos una estructura que permita encontrar los "vecinos más cercanos" sin tener que evaluarlos todos.</p>
+<p>HNSW (Hierarchical Navigable Small Worlds) es un algoritmo basado en grafos jerárquicos. Su estrategia consiste en crear una red de caminos donde cualquier nodo puede alcanzar a otro en muy pocos pasos. Combina dos conceptos clave:</p>
+<ul>
+<li>
+<p>Small Worlds: Grafos donde la mayoría de los nodos no son vecinos, pero se puede llegar de uno a otro mediante un número pequeño de saltos.</p>
+</li>
+<li>
+<p>Jerarquía: Una estructura de capas similar a una Skip List, donde las capas superiores son "vías rápidas" y las inferiores contienen el detalle total.</p>
+</li>
+</ul>
+<h4 id="el-proceso-de-insercion">El Proceso de Inserción</h4>
+<p>Cuando un nuevo vector llega a la base de datos, el algoritmo debe decidir dónde colocarlo y con quién conectarlo:
+1. Asignación de Capa: Mediante un cálculo probabilístico, se le asigna al vector una "capa máxima". La mayoría de los vectores se quedan en la Capa 0 (la base), y solo unos pocos llegan a las capas superiores.
+2. Búsqueda de Vecinos: Empezando desde la capa más alta, el algoritmo busca el punto más cercano al nuevo vector.
+3. Establecimiento de Vínculos (<span class="arithmatex">\(M\)</span>): En cada capa donde el vector debe existir, se conecta con sus <span class="arithmatex">\(M\)</span> vecinos más cercanos.
+4. Heurística de Selección: El algoritmo no siempre elige a los más cercanos "puros", a veces prefiere vecinos que ayuden a "expandir" la red en diferentes direcciones para asegurar que el grafo sea navegable y no queden zonas aisladas.</p>
+<p><a href="https://www.youtube.com/watch?v=QvKMwLjdK-s"><img alt="No se pudo cargar el video" src="https://www.pinecone.io/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fvr8gru94%2Fproduction%2Fd6e3a660654d9cb55f7ac137a736539e227296b6-1920x1080.png&amp;w=3840&amp;q=75" /></a></p>
+<h1 id="cuantizacion-de-producto-pq">Cuantización de Producto (PQ)</h1>
+<p>Un embedding estándar (por ejemplo, de 1536 dimensiones en formato float32) ocupa unos 6 KB. Aunque parece poco, una base de datos con 100 millones de vectores requeriría más de 600 GB de memoria RAM solo para almacenar los vectores, sin contar la estructura del grafo HNSW. La Cuantización de Producto (PQ) reduce este consumo drásticamente transformando vectores pesados en códigos compactos.</p>
+<h3 id="proceso-de-compresion">Proceso de Compresión</h3>
+<p>La técnica PQ descompone el problema de la compresión en tres pasos fundamentales:
+1. Segmentación (Splitting): El vector original se divide en <span class="arithmatex">\(M\)</span> trozos o sub-vectores iguales. Por ejemplo, un vector de 1024 dimensiones se puede dividir en 8 trozos de 128 dimensiones cada uno.
+2. Cuantización por Sub-espacio: Para cada uno de los 8 trozos, el sistema ya ha entrenado previamente un "catálogo" (llamado Codebook) con 256 variantes típicas (centroides).
+3. Asignación de IDs: Cada trozo del vector original se compara con los 256 candidatos de su catálogo correspondiente. En lugar de guardar los 128 números decimales del trozo, solo guardamos el ID (un solo byte, de 0 a 255) del candidato que más se le parece.</p>
+<p>Resultado: El vector original de 1024 números decimales se convierte en una combinación de los identificadores.</p>
+<h3 id="calculo-de-distancia">Cálculo de Distancia</h3>
+<p>Una de las mayores ventajas de PQ es que permite calcular distancias sin necesidad de descomprimir los vectores a su estado original. Este proceso se conoce como ADC (Asymmetric Distance Computation):</p>
+<ol>
+<li>Pre-cálculo: Cuando el usuario realiza una consulta, el sistema compara el vector de búsqueda (que está completo, sin comprimir) contra los 256 candidatos de cada uno de los 8 catálogos.</li>
+<li>Tabla de Distancias: Se genera una pequeña tabla con estos resultados.</li>
+<li>Suma de IDs: Para saber la distancia entre la consulta y cualquier vector de la base de datos, el sistema solo tiene que mirar los 8 IDs del vector guardado, buscar sus valores en la tabla de pre-cálculo y sumarlos.</li>
+</ol>
+<p>Este método es extremadamente rápido, ya que sustituye cálculos matemáticos complejos por simples consultas a una tabla y sumas de enteros.</p>
+<p><a href="https://www.youtube.com/watch?v=BMYBwbkbVec&amp;t=11s"><img alt="No se pudo cargar el video" src="https://www.pinecone.io/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fvr8gru94%2Fproduction%2F0425edbee092b14b4a6a32cfb50e99a1971399ba-1920x1080.gif&amp;w=3840&amp;q=75" /></a></p>
+<h1 id="filtrado-por-metadatos-busqueda-hibrida">Filtrado por metadatos: Búsqueda Híbrida</h1>
+<p>La búsqueda híbrida combina la similitud semántica (vectores) con filtros de atributos tradicionales (metadatos). 
+El reto técnico es integrar estos filtros sin degradar la eficiencia del algoritmo HNSW.
+Estrategias de Filtrado:
+- Post-filtering: Se realiza la búsqueda vectorial y luego se descartan los resultados que no cumplen los metadatos.
+  - Riesgo: Puede devolver menos resultados de los solicitados (<span class="arithmatex">\(K\)</span>) si los vecinos más cercanos no cumplen el filtro.
+- Pre-filtering: Se filtran los datos primero y luego se busca entre los supervivientes.
+  - Riesgo: Si el filtro es muy estricto, el grafo HNSW se fragmenta, obligando al sistema a realizar una búsqueda lineal lenta.
+- In-search Filtering: El filtro se aplica en tiempo real mientras el HNSW navega por el grafo.
+  - Ventaja: Es la opción más eficiente; garantiza encontrar los <span class="arithmatex">\(K\)</span> resultados exactos manteniendo la velocidad logarítmica del grafo.</p>
+<p>Una vez entendidas las bases de datos vectoriales vemos la función más extendida de estas.</p>
+<h1 id="rag-retrieval-augmented-generation">RAG: Retrieval-Augmented Generation</h1>
+<p>El RAG es una arquitectura que permite a un Modelo de Lenguaje (LLM), como GPT-4 o Claude, consultar una base de datos externa en tiempo real antes de responder. En lugar de confiar solo en lo que aprendió durante su entrenamiento, la IA consulta sus embeddings almacenados para la generación de promps con memoria.</p>
+<h3 id="workflow">Workflow</h3>
+<ol>
+<li>
+<p>Recuperación (Retrieval): Cuando el usuario hace una pregunta, esta se convierte en un embedding. El sistema usa el HNSW (para navegar rápido) y el PQ (para ahorrar memoria) para encontrar los fragmentos de texto más parecidos en la base de datos.</p>
+</li>
+<li>
+<p>Aumentación (Augmentation): Los fragmentos encontrados (párrafos de manuales, PDFs, chats) se extraen del disco y se pegan junto a la pregunta original del usuario.</p>
+</li>
+<li>
+<p>Generación (Generation): El LLM recibe un "super-prompt" que dice: "Basándote exclusivamente en este contexto que te paso, responde a la pregunta", generando así prompts mejorados a la vez que consigue un mayor contexto en su base de datos.</p>
+</li>
+</ol>
+<h2 id="recomenendaciones-bases-de-datos-vectoriales">Recomenendaciones bases de datos vectoriales</h2>
+<ul>
+<li>Pinecone (Recomendada)<blockquote>
+<p><em>pip install pinecone-client</em></p>
+</blockquote>
+</li>
+<li>ChromaDB (Recomendada)<blockquote>
+<p><em>pip install chromadb</em></p>
+</blockquote>
+</li>
+<li>Weaviate<blockquote>
+<p><em>docker run -p 8080:8080 -p 50051:50051 cr.weaviate.io/semitechnologies/weaviate:1.36.6</em></p>
+</blockquote>
+</li>
+<li>PostgreSQL (con extension pgvector) <blockquote>
+<p><em>sudo apt-get install postgresql-server-dev-all</em>
+  <em>git clone https://github.com/pgvector/pgvector.git</em>
+  <em>cd pgvector</em>
+  <em>make</em>
+  <em>sudo make install</em></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="referencias">Referencias</h1>
+<p><a href="https://www.pinecone.io/learn/vector-similarity/">Pinecone vector-similarity</a></p>
+<p><a href="https://projector.tensorflow.org/">Proyector de embeddings</a></p>
+<p><a href="https://cohere.com/blog/embeddings">Info embeddings</a></p>
+<p><a href="https://www.youtube.com/watch?v=QvKMwLjdK-s">Video HNSW</a></p>
+<p><a href="https://www.pinecone.io/learn/series/faiss/hnsw/">info HNSW</a></p>
+<p><a href="https://weaviate.io/blog/hybrid-search-explained">info busqueda híbrida</a></p>
+<p><a href="https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/">info RAG</a></p>
+<p><a href="https://www.pinecone.io/learn/series/faiss/product-quantization/">infp PQ</a></p>
+<p><a href="https://www.youtube.com/watch?v=BMYBwbkbVec&amp;t=11s">video PQ</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026 <a href="https://github.com/MarceloSaval" target="_blank" rel="noopener">Marcelo Saval</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.lin", "content.code.annotation", "content.code.copy", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

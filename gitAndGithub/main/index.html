@@ -1,0 +1,3563 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://marcelosaval.github.io/Wiki-IMCR/gitAndGithub/main/">
+      
+      
+        <link rel="prev" href="../../Vectorial%20DB/VectorialDB/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>1. ¿Qué es GIT? - Wiki IMCR</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-que-es-git" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki IMCR" class="md-header__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki IMCR
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. ¿Qué es GIT?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome to IMCR
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-tabs__link">
+          
+  
+  
+   Despliegue, Self Hosting y Mantenimiento de un Homelab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Bluetooth/Bluetooth/" class="md-tabs__link">
+          
+  
+  
+  Bluetooth
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-tabs__link">
+          
+  
+  
+  Cloud Computing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Architecture/RISC-V/" class="md-tabs__link">
+          
+  
+  
+  Computer Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Computer%20Vision/ComputerVision/" class="md-tabs__link">
+          
+  
+  
+  Computer Vision
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-tabs__link">
+          
+  
+  
+  Deep Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Face%20detection/Comparativa/" class="md-tabs__link">
+          
+  
+  
+  Face detection
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Financiacion/Financiacion/" class="md-tabs__link">
+          
+  
+  
+  Financiacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-tabs__link">
+          
+  
+  
+  GPS and GeoFencing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Industria4_0/Industria4_0/" class="md-tabs__link">
+          
+  
+  
+  Industria4 0
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../IoT/ConduccionAutonoma/" class="md-tabs__link">
+          
+  
+  
+  IoT
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-tabs__link">
+          
+  
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Retrocomputacion/Retrocomputacion/" class="md-tabs__link">
+          
+  
+  
+  Retrocomputacion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SDN/SoftwareDefined_Networking/" class="md-tabs__link">
+          
+  
+  
+  SDN
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Seguridad/Anti-spoofing/" class="md-tabs__link">
+          
+  
+  
+  Seguridad
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Sistemas%20Embebidos/00-indice/" class="md-tabs__link">
+          
+  
+  
+  Sistemas Embebidos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-tabs__link">
+          
+  
+  
+  Soft Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Vectorial%20DB/VectorialDB/" class="md-tabs__link">
+          
+  
+  
+  Vectorial DB
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  gitAndGithub
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki IMCR" class="md-nav__button md-logo" aria-label="Wiki IMCR" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki IMCR
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to IMCR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab/%20Despliegue%2C%20Self-Hosting%20y%20Mantenimiento%20de%20un%20Homelab%20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+     Despliegue, Self Hosting y Mantenimiento de un Homelab 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bluetooth
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Bluetooth/Bluetooth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bluetooth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cloud Computing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud%20Computing/KubernetesYCloudComputing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes y el Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Architecture/RISC-V/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura de Computadores: Arquitectura RISC-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/ComputerVision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Vision/Segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deep Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Atenci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención en Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/CNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CNN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Perceptr%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perceptron y función de activación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/PositionalEncoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Positional Encoding y Arquitectura de Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/RNNs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recurrent Neural Networks (RNNs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Deep%20Learning/Transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Face detection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Face detection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Face%20detection/Comparativa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparativa de métodos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Financiacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Financiacion/Financiacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financiación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS and GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPS and GeoFencing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GPS%20and%20GeoFencing/GPSAndGeofencing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPS &amp; GeoFencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Industria4 0
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Industria4 0
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Industria4_0/Industria4_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IIoT y Cadena de Suministro Inteligente — Industria 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IoT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/ConduccionAutonoma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conducción autonóma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Desarrollo%20sistema%20IoT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desarrollo de sistema IoT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IoT/Protocolo%20I2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolo I2C y cómo conectar diferentes dispositivos idénticos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/AprendizajeSupervisado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje Supervisado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/DataAugmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Augmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Machine%20Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/M%C3%A9tricas%20de%20evaluaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Métricas de evaluación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Overfitting%20Underfitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overfitting y Underfitting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/ReinforcementLearning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aprendizaje por Refuerzo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/Validacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrocomputacion
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Retrocomputacion
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/Retrocomputacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Boy Advance + Introducción a la Ingeniería Inversa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrocomputacion/ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Probando mkdocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SDN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SDN/SoftwareDefined_Networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software-defined Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguridad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Seguridad/Anti-spoofing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anti-Spoofing en Reconocimiento Facial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/00-indice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/01-panorama-actual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Panorama Actual de los Sistemas Embebidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/02-hardware-esp32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hardware: Arduino vs ESP32 en Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/03-sofware-mi-primer-programa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Programación Avanzada: Del Bucle Secuencial al RTOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/04-entornos-desarrollo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Entornos de Desarrollo: De Prototipo a Producción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sistemas%20Embebidos/05-mantenimiento-fiabilidad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Mantenimiento y Fiabilidad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soft Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Soft Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/motivacion-soft-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motivación como soft skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft%20Skills/presentacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como hablar en público y hacer una presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vectorial DB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vectorial DB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vectorial%20DB/VectorialDB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bases De Datos Vectoriales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gitAndGithub
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    gitAndGithub
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. ¿Qué es GIT?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-que-es-git">1. ¿Qué es GIT?</h1>
+<p>Git es un software de <strong>control de versiones</strong> de código abierto desarrollado por Linus Torvalds (el creador de Linux). Dicho software tiene como objetivo llevar un registro de los cambios en los archivos de un proyecto, además de coordinar el trabajo que varios usuarios puedan realizar sobre un mismo archivo en un repositorio de código.</p>
+<h1 id="2-que-es-github">2. ¿Qué es GITHUB?</h1>
+<p>Github es una plataforma de desarrollo colaborativo (a este tipo de plataformas también se le llaman <strong>forjas</strong>) que utiliza el sistema de control de versiones Git. Github nos permite almacenar repositorios de código en la nube y facilita compartir el repositorio con otros colaboradores. Además, versiones recientes han incorporado herramientas de gestión de proyectos.</p>
+<p>Github ofrece varios tipos de suscripciones. Esta wiki se centra en la versión gratuita. También existen otras alternativas de código abierto como <strong>GitLab</strong> y <strong>Codeberg</strong>.</p>
+<div align="center">
+  <a href="https://codeberg.org/"><img src="../images/gitImages/logos/Codeberg.png" alt="Codeberg Logo" style="width:100px;"></a>
+  <a href="https://github.com/"><img src="../images/gitImages/logos/Github.png" alt="GitHub Logo" style="width:100px;"></a>
+  <a href="https://about.gitlab.com/"><img src="../images/gitImages/logos/GitLab.png" alt="GitLab Logo" style="width:100px;"></a>
+</div>
+
+<hr />
+<h1 id="3-funciones-basicas-de-git">3. Funciones Básicas de GIT</h1>
+<p>Para Instalar Git podemos ir a su <a href="https://git-scm.com/install/">documentación oficial</a> donde explican cómo instalarlo para diversos sistemas operativos.</p>
+<h2 id="creacion-y-clonacion">Creación y Clonación</h2>
+<ul>
+<li><strong>Inicializar:</strong> Crea una carpeta y ejecuta <code>git init</code>. Se creará una carpeta oculta <code>.git</code>.</li>
+<li><strong>Clonar:</strong> Si quieres descargar un proyecto existente: <code>git clone URL_del_proyecto</code>.</li>
+</ul>
+<h2 id="configuracion-de-usuario">Configuración de usuario</h2>
+<p>Antes de continuar debemos configurar el nombre y correo electrónico. Para ello usaremos:</p>
+<ul>
+<li><code>git config --global user.name "Tu Nombre"</code></li>
+<li><code>git config --global user.email "tu@email.com"</code></li>
+</ul>
+<p><code>--global</code> indica que este nombre y correo deben usarse en todos los repositorios. Si solo quieres configurarlo para un proyecto específico, quita ese argumento.</p>
+<h2 id="debajo-del-capo-las-3-areas">Debajo del capó: Las 3 Áreas</h2>
+<p>Git es un sistema <strong>distribuido</strong>. Cada contribuidor tiene una copia completa en su máquina. Localmente, Git se divide en 3 sub-partes:</p>
+<ol>
+<li><strong>Working Directory:</strong> Donde están tus archivos físicos (cambios no gestionados aún).</li>
+<li><strong>Staging Area (Índice):</strong> Donde Git vigila los cambios preparados. Se usa <code>git add</code>.</li>
+<li><strong>Repository:</strong> Tu copia local del historial. Se usa <code>git commit</code>.</li>
+</ol>
+<blockquote>
+<p><img alt="GIT Stages" src="../../images/gitImages/stages/gitStages.webp" /></p>
+</blockquote>
+<hr />
+<h1 id="4-gestion-de-cambios">4. Gestión de Cambios</h1>
+<h2 id="git-add-e-gitignore">Git Add e .gitignore</h2>
+<ul>
+<li><code>git add fileName</code>: Añade un archivo al índice.</li>
+<li><code>git add .</code>: Añade todos los cambios de la carpeta actual.</li>
+<li><strong>.gitignore:</strong> Archivo oculto en la raíz donde escribes qué archivos o extensiones Git <strong>no debe rastrear</strong> (ej: <code>node_modules/</code> o <code>.env</code>).</li>
+</ul>
+<h2 id="git-commit">Git Commit</h2>
+<p>Guarda los cambios del índice en el repositorio local:
+<code>git commit -m "Mensaje descriptivo"</code></p>
+<ul>
+<li><strong>Ver historial:</strong> Usa <code>git log</code> para ver los commits realizados.</li>
+<li><strong>Diferencias:</strong> <code>git diff commit1 commit2</code> para ver qué cambió entre dos estados. commit1 y commit2 son los hashes de los commits</li>
+</ul>
+<h2 id="revertir-cambios">Revertir Cambios</h2>
+<ol>
+<li><code>git checkout hash</code>: Mueve el puntero a ese commit (solo lectura/inspección).</li>
+<li><code>git reset --hard hash</code>: <strong>Peligro.</strong> Borra todo lo que esté por delante de ese commit.</li>
+<li><code>git revert hash</code>: Crea un nuevo commit que deshace los cambios del commit especificado. Es la opción más segura.</li>
+</ol>
+<h2 id="asignar-un-commit">Asignar un Commit</h2>
+<p>Si alguna vez entramos a trabjar en un proyecto y queremos ver quien ha hecho un commit, podemos usar el comando: <code>git blame &lt;file&gt;</code>, este comando permite ver que ha aportado cada usuario en cada archivo.</p>
+<hr />
+<h1 id="5-git-branch-la-playa-de-vias-del-desarrollo">5 Git Branch: La Playa de Vías del Desarrollo</h1>
+<p>Las ramas (o <em>branches</em>) son el corazón del trabajo colaborativo. Imagina el desarrollo de un software como una <strong>playa de vías de tren</strong>:</p>
+<ul>
+<li><strong>La Vía Principal (<code>main</code> o <code>master</code>):</strong> Es la vía por la que circula el tren de producción. Aquí solo debe haber código estable, limpio y listo para el usuario final.</li>
+<li><strong>Vías Secundarias (Ramas de función):</strong> Cuando necesitas "reparar un vagón" (arreglar un bug) o "añadir un vagón de lujo" (nueva funcionalidad), sacas el tren de la vía principal a una vía secundaria. Allí puedes trabajar sin riesgo de chocar con otros trenes o detener el tráfico de la vía principal.</li>
+</ul>
+<p><img alt="Playa de vias" src="../../images/gitImages/ramas/playaVias.jpg" /></p>
+<p>Esta estructura permite que diez desarrolladores trabajen en diez funciones distintas al mismo tiempo, cada uno en su propia "vía", para luego reincorporarse a la principal cuando todo esté verificado.</p>
+<hr />
+<h3 id="gestion-de-ramas">Gestión de Ramas</h3>
+<p>Para moverte por estas vías, Git nos ofrece varios comandos:</p>
+<ul>
+<li><strong>Crear y cambiar en un paso:</strong> <code>git checkout -b nombre-rama</code>. Es el más usado; crea la vía y te sitúa en ella al instante.</li>
+<li><strong>Listar vías:</strong> <code>git branch</code>. Te muestra en qué rama estás (marcada con un asterisco) y qué otras existen localmente.</li>
+<li><strong>Saltar entre ramas:</strong> <code>git checkout nombre-rama</code>. (Asegúrate de haber hecho <code>commit</code> de tus cambios antes de saltar, o Git podría impedírtelo para no perder datos).</li>
+</ul>
+<hr />
+<h3 id="unificando-el-ramas-merge-vs-rebase">Unificando el ramas: Merge vs. Rebase</h3>
+<p>Una vez que el trabajo en la vía secundaria ha terminado, es hora de volver a la vía principal. Tenemos dos formas de hacerlo:</p>
+<h4 id="git-merge-la-union-clasica"><strong>Git Merge (La unión clásica)</strong></h4>
+<p>Crea un "commit de unión" que junta las dos historias.
+* <strong>Ventaja:</strong> Conserva el historial exacto de cómo y cuándo se trabajó en la rama secundaria.
+* <strong>Uso:</strong> <code>git checkout main</code> -&gt; <code>git merge nombre-rama</code>.</p>
+<h4 id="git-rebase-la-historia-lineal"><strong>Git Rebase (La historia lineal)</strong></h4>
+<p>Mueve toda la rama secundaria y la coloca justo al final de la vía principal, como si siempre se hubiera trabajado allí.
+* <strong>Ventaja:</strong> El historial queda limpio y lineal, sin commits de unión que "ensucien" el gráfico.
+* <strong>Uso:</strong> <code>git checkout nombre-rama</code> -&gt; <code>git rebase main</code>.</p>
+<hr />
+<h3 id="conflictos-de-fusion">Conflictos de Fusión</h3>
+<p>A veces, dos desarrolladores modifican la misma línea del mismo archivo en vías distintas. Cuando intentas unirlas, Git no sabe qué versión elegir y genera un <strong>Conflicto</strong>.</p>
+<p>En ese momento, Git detiene la operación y marca el archivo:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Código que ya estaba en la vía principal
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>=======
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Código nuevo que traes de tu rama
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name
+</code></pre></div></p>
+<p>¿Cómo se soluciona?</p>
+<ul>
+<li>
+<p>Abres el archivo y borras las marcas (&lt;&lt;&lt;&lt;, ====, &gt;&gt;&gt;&gt;).</p>
+</li>
+<li>
+<p>Dejas el código como debería quedar finalmente.</p>
+</li>
+<li>
+<p>Haces git add y git commit para confirmar que el conflicto está resuelto.</p>
+</li>
+</ul>
+<h3 id="borrar-ramas">Borrar Ramas</h3>
+<p>Una vez que una funcionalidad ya está en main, la vía secundaria ya no es necesaria y debe borrarse para no saturar el proyecto.</p>
+<div class="highlight"><pre><span></span><code>Borrado seguro: git branch -d nombre-rama. Git solo te dejará borrarla si ya has fusionado los cambios con la vía principal.
+
+Borrado forzoso: git branch -D nombre-rama. Úsalo si quieres descartar un experimento que salió mal y no quieres conservar nada de ese código.
+</code></pre></div>
+<hr />
+<h2 id="git-remote-repository"><a href="https://git-scm.com/docs/git-remote/es">Git Remote Repository</a></h2>
+<p>Un repositorio remoto en Git es una versión del proyecto alojada en un servidor (como GitHub o GitLab). Es el "punto de encuentro" que permite la colaboración: tú trabajas en tu copia local y luego sincronizas tus avances con el servidor.</p>
+<p>Los comandos esenciales para esta comunicación son: <strong>remote</strong>, <strong>push</strong>, <strong>pull</strong> y <strong>fetch</strong>.</p>
+<hr />
+<h3 id="configurar-un-repositorio-remoto">Configurar un Repositorio Remoto</h3>
+<p>Para conectar tu carpeta local con un servidor por primera vez:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>&lt;url-del-repositorio&gt;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>origin:<span class="w"> </span>Es<span class="w"> </span>el<span class="w"> </span>nombre<span class="w"> </span>estándar<span class="w"> </span><span class="o">(</span><span class="nb">alias</span><span class="o">)</span><span class="w"> </span>que<span class="w"> </span>le<span class="w"> </span>damos<span class="w"> </span>al<span class="w"> </span>servidor<span class="w"> </span>remoto<span class="w"> </span>principal.<span class="w"> </span>Por<span class="w"> </span>convención<span class="w"> </span>se<span class="w"> </span>usa<span class="w"> </span><span class="s2">&quot;origin&quot;</span>,<span class="w"> </span>pero<span class="w"> </span>podrías<span class="w"> </span>tener<span class="w"> </span>varios<span class="w"> </span><span class="o">(</span>ej.<span class="w"> </span>uno<span class="w"> </span>para<span class="w"> </span>producción<span class="w"> </span>y<span class="w"> </span>otro<span class="w"> </span>para<span class="w"> </span>desarrollo<span class="o">)</span>.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span>URL:<span class="w"> </span>La<span class="w"> </span>dirección<span class="w"> </span>HTTPS<span class="w"> </span>o<span class="w"> </span>SSH<span class="w"> </span>que<span class="w"> </span>te<span class="w"> </span>proporciona<span class="w"> </span>tu<span class="w"> </span>forja<span class="w"> </span><span class="o">(</span>GitHub/GitLab<span class="o">)</span>.
+</code></pre></div>
+Para verificar tus remotos configurados usa: git remote -v.
+Sincronización de Datos</p>
+<h3 id="hacer-un-push-subir">Hacer un Push (Subir)</h3>
+<p>Envía tus commits locales al servidor para que el resto del equipo pueda verlos.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git push origin &lt;nombre-de-la-rama&gt;
+</code></pre></div></p>
+<p>La primera vez que subes una rama, usa git push -u origin <nombre-de-la-rama>. El parámetro -u (upstream) enlaza tu rama local con la del servidor. A partir de ahí, solo necesitarás escribir git push.</p>
+<h3 id="hacer-un-fetch-traer-informacion">Hacer un Fetch (Traer información)</h3>
+<p>Descarga la información del servidor pero no modifica tu código. Es como bajarse las noticias: ves lo que han hecho otros, pero no lo integras todavía en tus archivos.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git fetch origin
+</code></pre></div></p>
+<h3 id="hacer-un-pull-traer-y-fusionar">Hacer un Pull (Traer y fusionar)</h3>
+<p>Descarga los cambios y los intenta mezclar automáticamente con tu trabajo actual. Es el equivalente a ejecutar un fetch seguido de un merge.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git pull origin &lt;nombre-de-la-rama&gt;
+</code></pre></div></p>
+<h3 id="ramas-remotas-remote-tracking-branches">Ramas Remotas (Remote-Tracking Branches)</h3>
+<p>Cuando trabajas con remotos, aparecen ramas con nombres como origin/main o origin/feature-x. Estas son ramas remotas.</p>
+<p>Son "punteros" que actúan como una fotografía del último estado conocido del servidor. Tú no puedes escribir directamente en origin/main; solo puedes verla. Para trabajar en ella, debes crear una rama local que la "siga".</p>
+<p>Comandos útiles para ramas remotas:</p>
+<ul>
+<li>
+<p>Ver todas las ramas (locales y remotas): git branch -a.</p>
+</li>
+<li>
+<p>Borrar una rama en el servidor: git push origin --delete <nombre-de-la-rama>.</p>
+</li>
+<li>
+<p>Limpiar ramas fantasma: Si alguien borró una rama en GitHub, tu Git local puede seguir mostrándola. Borralas con:
+git fetch --prune.</p>
+</li>
+</ul>
+<h1 id="6-git-avanzado">6. Git Avanzado</h1>
+<h2 id="git-stash-el-baul-de-emergencias">Git Stash: El "Baúl" de Emergencias</h2>
+<p>Imagina que estás en medio de una funcionalidad compleja, con archivos a medio editar y código que aún no compila. De repente, surge un bug crítico en <code>main</code> que debes arreglar <strong>inmediatamente</strong>. </p>
+<p>No quieres hacer un <code>commit</code> de algo roto, pero Git no te deja cambiar de rama porque tienes "cambios sucios". Aquí entra <code>git stash</code>: permite guardar tus cambios actuales en una pila temporal, limpiar tu área de trabajo y recuperarlos más tarde.</p>
+<hr />
+<h3 id="1-comandos-basicos">1. Comandos Básicos</h3>
+<ul>
+<li><strong>Guardar cambios:</strong> Limpia tu directorio y guarda el estado actual.
+ <code>git stash</code></li>
+</ul>
+<p>Guardar con nombre: (Recomendado) Para saber qué guardaste semanas después.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    git stash save &quot;trabajo a medias en el motor de búsqueda&quot;
+</code></pre></div></p>
+<p>Incluir archivos nuevos: Por defecto, stash no guarda archivos que acabas de crear (untracked). Usa el flag -u:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    git stash -u
+</code></pre></div></p>
+<h3 id="recuperar-y-gestionar-el-stash">Recuperar y Gestionar el Stash</h3>
+<p>Git guarda los stashes en una pila (el último en entrar es el primero en salir).</p>
+<p>Ver la lista: Muestra todos tus stashes guardados.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git stash list
+</code></pre></div>
+Verás algo como: stash@{0}: On feature-x: motor busqueda</p>
+<p>Recuperar y borrar (Pop): Aplica el stash más reciente y lo elimina de la lista.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git stash pop
+</code></pre></div></p>
+<p>Recuperar sin borrar (Apply): Útil si quieres aplicar los mismos cambios en varias ramas.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git stash apply
+</code></pre></div></p>
+<p>Recuperar uno específico: Si tienes varios, usa su identificador.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git stash apply stash@{2}
+</code></pre></div></p>
+<h3 id="limpieza-del-stash">Limpieza del Stash</h3>
+<p>Si ya no necesitas lo que guardaste, mantén tu baúl limpio:</p>
+<ul>
+<li>
+<p>Borrar el más reciente: git stash drop</p>
+</li>
+<li>
+<p>Borrar uno específico: git stash drop stash@{1}</p>
+</li>
+<li>
+<p>Vaciar todo el baúl: git stash clear</p>
+</li>
+</ul>
+<h3 id="escenario-de-uso-real-workflow">Escenario de uso real (Workflow)</h3>
+<ul>
+<li>
+<p>Estás en la rama desarrollo trabajando.</p>
+</li>
+<li>
+<p>Emerge una urgencia: git stash (tu rama queda limpia).</p>
+</li>
+<li>
+<p>Vas a otra rama: git checkout main -&gt; arreglas el bug -&gt; push.</p>
+</li>
+<li>
+<p>Vuelves a tu sitio: git checkout desarrollo.</p>
+</li>
+<li>
+<p>Recuperas tu trabajo: git stash pop.</p>
+</li>
+</ul>
+<h2 id="git-hooks">Git Hooks</h2>
+<p>Los Git Hooks son scripts que se ejecutan automáticamente en determinados momentos del ciclo de vida de un repositorio Git. Permiten a los desarrolladores personalizar el comportamiento de Git para adaptarlo a sus flujos de trabajo específicos. Por ejemplo prodriamos programar un Hook para que al hacer push al repositorio mande un email a todo el equipo para que actualize sus repositorios locales.</p>
+<h3 id="tipos-de-hooks">Tipos de Hooks</h3>
+<p>Como se pueda apreciar en la imagen(en la imagen no aparecen todos), existen muchos tipos de hooks en funcion de cuando se ejecutan.</p>
+<ol>
+<li><strong>applypatch-msg</strong>: Ejecutado después de que se aplica un parche, pero antes de que se genere el mensaje de confirmación.</li>
+<li><strong>commit-msg</strong>: Ejecutado después de que se ingresó el mensaje de confirmación, pero antes de que se complete la confirmación.</li>
+<li><strong>pre-commit</strong>: Ejecutado despues de ejecutar <code>git commit</code> y  antes de que se cree el objeto commit. Es de los hooks más usados.</li>
+<li><strong>prepare-commit-msg</strong>: Ejecutado antes de que se abra el editor para ingresar el mensaje de confirmación. Permite modificar el mensaje predeterminado.</li>
+<li><strong>post-commit</strong>: Ejecutado después de que se ha realizado la confirmación. Útil para notificaciones o implmentaciones automáticas.</li>
+<li><strong>pre-rebase</strong>: Ejecutado antes de llevar a cabo una rebase. Permite ejecutar tareas antes de la rebase.</li>
+<li><strong>pre-push</strong>: Ejecutado antes de que se envíen cambios a un repositorio remoto. Ideal para ejecutar pruebas o chequeos de calidad.</li>
+<li><strong>post-checkout</strong>: Ejecutado después de cambiar de rama o hacer un nuevo checkout.</li>
+<li><strong>post-merge</strong>: Ejecutado después de completar un merge.</li>
+<li><strong>pre-auto-gc</strong>: Ejecutado antes de que Git realice una recolección de basura automática.</li>
+<li><strong>pre-receive</strong>: Ejecutado en el servidor antes de aceptar cambios en un repositorio.</li>
+<li><strong>update</strong>: Ejecutado en el servidor al recibir nuevos cambios, permite verificar que se pueden aplicar.</li>
+<li><strong>post-receive</strong>: Ejecutado en el servidor después de haber recibido y aceptado cambios.</li>
+<li><strong>post-update</strong>: Ejecutado después de recibir cambios, útil para actualizaciones de servicios o notificaciones.</li>
+</ol>
+<p><img alt="git Hooks" src="../../images/gitImages/hooks/gitHooks.webp" /></p>
+<h3 id="como-configurar-un-hook">Cómo Configurar un Hook</h3>
+<p>Para configurar un hook, primero debes navegar a la carpeta .git/hooks dentro de tu repositorio local. Allí encontrarás varios archivos de ejemplo con la extensión .sample. Para habilitar un hook, simplemente renombra el archivo removiendo la extensión .sample y hazlo ejecutable.</p>
+<p>Aquí hay un ejemplo de un Hook que se va en el archivo .git/hooks/pre-commit y imprime un mensaje por pantalla para recordar al usuario que ponda un mensaje de commit útil:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>bash
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>#!/bin/sh
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>echo &quot;# Please include a useful commit message!&quot; &gt; $1
+</code></pre></div></p>
+<h2 id="git-submodules-el-arte-de-la-modularizacion">Git Submodules: El Arte de la Modularización</h2>
+<p>Un submódulo es, esencialmente, un repositorio de Git incrustado dentro de otro repositorio de Git. Imaginemos que el proyecto es un coche: el motor, la radio y las ruedas podrían ser repositorios independientes que tú "ensamblas" en tu proyecto principal.</p>
+<h3 id="por-que-complicarse-con-submodulos">¿Por qué complicarse con Submódulos?</h3>
+<p>Tener un "monorepo" (todo en uno) es fácil al principio, pero los submódulos resuelven problemas de escala:</p>
+<ul>
+<li>
+<p>Independencia de Versiones: El proyecto principal no guarda los archivos del submódulo, sino que guarda un puntero a un commit específico. Esto evita que una actualización en la librería rompa tu App hasta que tú decidas "subir de versión".</p>
+</li>
+<li>
+<p>Reutilización Real: Si mejoras una librería de utilidades en el Proyecto A, esa mejora está disponible para el Proyecto B, C y D automáticamente porque todos apuntan al mismo origen.</p>
+</li>
+<li>
+<p>Seguridad: Permite separar partes del código. Puedes dar acceso a externos al submódulo de la "UI" sin que vean el código sensible del "Core" en el repo principal.</p>
+</li>
+</ul>
+<h3 id="flujo-de-trabajo-y-comandos">Flujo de Trabajo y Comandos</h3>
+<h4 id="anadir-un-submodulo">Añadir un Submódulo</h4>
+<p>Para incluir un repositorio externo en una carpeta específica de tu proyecto:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git submodule add https://github.com/usuario/libreria.git carpeta-destino
+</code></pre></div>
+¿Qué sucede al ejecutar esto?</p>
+<div class="highlight"><pre><span></span><code>Se crea el archivo .gitmodules: un archivo de texto que mapea la URL del proyecto con la carpeta local.
+
+Se añade la carpeta al área de preparación (staging).
+
+Ojo: Git no registra los archivos internos de la librería, solo registra el ID del commit actual de esa librería.
+</code></pre></div>
+<h4 id="clonar-un-proyecto-con-submodulos">Clonar un Proyecto con Submódulos</h4>
+<p>Si clonas un repositorio que ya tiene submódulos, verás que las carpetas están vacías. Git no descarga los submódulos por defecto para ahorrar ancho de banda. Tienes dos opciones:</p>
+<div class="highlight"><pre><span></span><code>Clonado &quot;todo en uno&quot;:
+
+git clone --recursive https://github.com/usuario/proyecto-principal.git
+
+Si ya clonaste y las carpetas están vacías:
+
+git submodule update --init --recursive
+</code></pre></div>
+<h4 id="actualizar-el-submodulo">Actualizar el Submódulo</h4>
+<p>Si el equipo de la librería ha subido mejoras y quieres traerlas a tu proyecto:
+Bash</p>
+<ul>
+<li>
+<p>Opción 1: Desde la raíz del proyecto principal
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git submodule update --remote
+</code></pre></div></p>
+</li>
+<li>
+<p>Opción 2: Entrando en la carpeta (como un git pull normal)
+ ```
+cd carpeta-submodulo
+git pull origin main
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>### Detached HEAD
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Cuando entras en la carpeta de un submódulo, Git te sitúa en un commit específico, no en una rama. Esto se llama Detached HEAD.
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a> IMPORTANTE: Si vas a modificar código dentro del submódulo, primero debes entrar en la carpeta y hacer un git checkout main (o la rama que uses). Si haces cambios en &quot;Detached HEAD&quot; y haces commit, esos cambios podrían perderse fácilmente.
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>### Eliminar un Submódulo 
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>Eliminar un submódulo es un proceso manual que requiere limpiar varios sitios:
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>- Eliminar la sección correspondiente en el archivo .gitmodules.
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>- Eliminar la sección en .git/config.
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>- Ejecutar: git rm --cached ruta/del/submodulo (sin la barra final).
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>- Borrar la carpeta físicamente y hacer commit.
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>### Ejemplo Práctico
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>Imagina que eres un desarrollador de juegos. Tienes un repo llamado MotorGrafico y otro llamado MiJuego.
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>- Escenario: Estás programando MiJuego y te das cuenta de que el MotorGrafico tiene un bug en las sombras.
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>- Acción: Como es un submódulo, entras en la carpeta del motor, arreglas el bug y haces push al repo del MotorGrafico.
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>- Resultado: Ahora, cualquier otro juego que estés desarrollando (Juego 2, Juego 3) que use ese mismo submódulo podrá beneficiarse del arreglo de las sombras con un simple update.
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a># 7.GitHub
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>## Crear Repositorio
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>Ya hemos explicado lo que es github y como crear un repositorio en git. Sin embargo tambien podemos crear el repositorio en github.
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>|Foto|Descripción|
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>|------|------------------|
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>|![Crear repositorio](../images/gitImages/cr/createRepo1.png)|En la pantalla principal de github, podemos encontrar un boton con el texto New para crear un nuevo repositorio. |
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>|![Crear repositorio](../images/gitImages/cr/createRepo2.png)| Una vez pulsado el boton, podemo rellenar los datos. Debemos elegir un nombre unico, la descripcion es opcional. Adicionalmente podemos añadir un readme, un .gitignore y una licencia. Estos tres ultimos parametros no importa si no los escogemos pues se pueden añadir mas tarde.|
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>|![Crear repositorio](../images/gitImages/cr/createRepo3.png)| FInalmente en esta pantalla github nos deja muy bien explicado las maneras que tenemos de inicializar el repositorio en local, o bien subir in repositorio que tuviesemos en local. Tambien nos permite elegir en si queremos acceder a github a traves de HTTPS o de SSH. Nosotros usaremos HTTPS.|
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>## Añadir colaboradores
+<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>Si no hemos añadido los colaboradores al principio, lo podeos hacer depues desde los ajustes del proyecto.
+<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>
+<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>|Foto|Descripción|
+<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>|------|------------------|
+<a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>|![Añadir Colaboradores](../images/gitImages/anaCol/anaCol1.png)|En la pantalla principal del repositorio escogemos la pestaña Settings|
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>|![Añadir Colaboradores](../images/gitImages/anaCol/anaCol2.png)|En la pestaña Settings vamos al submenú Collaborators donde ya prodremos añadir a nuestros colaboradores por su email o usuario de GitHub|
+<a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>
+<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>## Gestion De Acceso.
+<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>
+<a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>### Tipos de token
+<a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>
+<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>Desde hace tiempo que GitHub no usa contraseñas para autenticarse a la hora de interactuar con el repositiorio. Cuando hagamos git pull/push, git nos pedira un usuario y contraseña. El usuario es el de github pero la contraseña no es la de github si no que tenemos que crear un token para autorizar a git a operar en nuestro repositorio de github. Para emitir un token seguimos los siguientes pasos:
+<a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>
+<a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>|Foto|Descripción|
+<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>|------|------------------|
+<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>|![Emitir Token](../images/gitImages/Token/emitTo1.png)|Pulsamos sobre el icono de nuestro perfil y vamos a Settings|
+<a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>|![Emitir Token](../images/gitImages/Token/emitTo2.png)|Dentro de ajustes nos delizamos hasta abajo del todo en la barra lateral  y pulsamos sobre Developper settings|
+<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a>|![Emitir Token](../images/gitImages/Token/emitTo3.png)|Dentro de Developer settings seleccionamos Tokens clasicos. Y despues generar nuevo token|
+<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a>|![Emitir Token](../images/gitImages/Token/emitTo4.png)|En esta pantalla ponemos un nombre al token, fecha de expiracion y los permisos que le otorgamos los privilegion que queramos.|
+<a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a>
+<a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a>Una vez finalizado podemos crear token. A continuacion veras el token(es un codigo alfa-númerico muy largo), es importante que lo apuntes porque no podras volver a verlo.
+<a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a>
+<a id="__codelineno-14-64" name="__codelineno-14-64" href="#__codelineno-14-64"></a>Este token es el que pondremos en el campo de contraseña cuando git nos pregunte por ella. Pero escribir ese token tan largo cada vez que hacemos git pull/push es muy molesto e incomodo, por lo que git nos otorga ciertas herramientas para gestionar el tokén.
+<a id="__codelineno-14-65" name="__codelineno-14-65" href="#__codelineno-14-65"></a>
+<a id="__codelineno-14-66" name="__codelineno-14-66" href="#__codelineno-14-66"></a>
+<a id="__codelineno-14-67" name="__codelineno-14-67" href="#__codelineno-14-67"></a>### Gestión de Tokén
+<a id="__codelineno-14-68" name="__codelineno-14-68" href="#__codelineno-14-68"></a>El Credential Helper de Git permite almacenar de manera segura tus credenciales (como tokens de acceso) para que no tengas que ingresarlas cada vez que interactúas con un repositorio remoto. Esto simplifica el flujo de trabajo y mejora la eficiencia al trabajar con Git.
+<a id="__codelineno-14-69" name="__codelineno-14-69" href="#__codelineno-14-69"></a>Configuración del Credential Helper
+<a id="__codelineno-14-70" name="__codelineno-14-70" href="#__codelineno-14-70"></a>
+<a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a>Para configurar un Credential Helper, puedes usar el siguiente comando: `git config --global credential.helper cache`
+<a id="__codelineno-14-72" name="__codelineno-14-72" href="#__codelineno-14-72"></a>
+<a id="__codelineno-14-73" name="__codelineno-14-73" href="#__codelineno-14-73"></a>Este comando almacenará tus credenciales en memoria durante un período de tiempo determinado (15 minutos por defecto). Si deseas cambiar el tiempo, puedes especificar el siguiente argumento: `git config --global credential.helper &#39;cache --timeout=3600&#39;`.
+<a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a>
+<a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a>Donde el valor de 3600 es el tiempo en segundos que deseas mantener las credenciales en la memoria.
+<a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>Almacenamiento Persistente
+<a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a>
+<a id="__codelineno-14-78" name="__codelineno-14-78" href="#__codelineno-14-78"></a>Si prefieres almacenar tus credenciales de manera más permanente, puedes usar: `git config --global credential.helper store`
+<a id="__codelineno-14-79" name="__codelineno-14-79" href="#__codelineno-14-79"></a>
+<a id="__codelineno-14-80" name="__codelineno-14-80" href="#__codelineno-14-80"></a>Esto guardará tus credenciales en un archivo de texto plano en tu directorio de usuario. Sin embargo, esto puede plantear riesgos de seguridad.
+<a id="__codelineno-14-81" name="__codelineno-14-81" href="#__codelineno-14-81"></a>Cuidado con el Almacenamiento de Tokens
+<a id="__codelineno-14-82" name="__codelineno-14-82" href="#__codelineno-14-82"></a>
+<a id="__codelineno-14-83" name="__codelineno-14-83" href="#__codelineno-14-83"></a>Al guardar tus credenciales, ten en cuenta que debemos :
+<a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a>- Evitar el almacenamiento en texto plano: Si es posible, utiliza el método de cache o una herramienta de gestión de gestion de contraseñas.
+<a id="__codelineno-14-85" name="__codelineno-14-85" href="#__codelineno-14-85"></a>- Revisa los permisos: Asegúrate de que el archivo donde se almacenan las credenciales no sea accesible por otros usuarios.
+<a id="__codelineno-14-86" name="__codelineno-14-86" href="#__codelineno-14-86"></a> - Revoca tokens: Si sospechas que tu token ha sido comprometido, eliminalo inmediatamente  y genera uno nuevo.
+<a id="__codelineno-14-87" name="__codelineno-14-87" href="#__codelineno-14-87"></a>
+<a id="__codelineno-14-88" name="__codelineno-14-88" href="#__codelineno-14-88"></a> Para revisar tu configuración actual de Credential Helper, utiliza: `git config --global --get credential.helper`
+<a id="__codelineno-14-89" name="__codelineno-14-89" href="#__codelineno-14-89"></a>
+<a id="__codelineno-14-90" name="__codelineno-14-90" href="#__codelineno-14-90"></a>## kanbans
+<a id="__codelineno-14-91" name="__codelineno-14-91" href="#__codelineno-14-91"></a>
+<a id="__codelineno-14-92" name="__codelineno-14-92" href="#__codelineno-14-92"></a>Los Kanbans en GitHub son herramientas de gestión de proyectos que permiten organizar y visualizar el trabajo de forma visual. Se basan en la metodología Kanban, un sistema de gestión del flujo de trabajo originario de la manufactura japonesa. 
+<a id="__codelineno-14-93" name="__codelineno-14-93" href="#__codelineno-14-93"></a>En los Kanbans podemos crear tareas y asignarles un estado, por ejemplo los estados mas comunes son(To-do, in progress y Done).
+<a id="__codelineno-14-94" name="__codelineno-14-94" href="#__codelineno-14-94"></a>
+<a id="__codelineno-14-95" name="__codelineno-14-95" href="#__codelineno-14-95"></a>### Como crear un Kanban
+<a id="__codelineno-14-96" name="__codelineno-14-96" href="#__codelineno-14-96"></a>Para crear un Kanban:
+<a id="__codelineno-14-97" name="__codelineno-14-97" href="#__codelineno-14-97"></a>
+<a id="__codelineno-14-98" name="__codelineno-14-98" href="#__codelineno-14-98"></a>1. Primero debemos estar en nuestro repositorio, y en el menu horizontal superior seleccionamos Projects
+<a id="__codelineno-14-99" name="__codelineno-14-99" href="#__codelineno-14-99"></a>2. Dentro de projects seleccionamos el botón verde de crear nuevo proyecto.
+<a id="__codelineno-14-100" name="__codelineno-14-100" href="#__codelineno-14-100"></a>3. Ahora GitHub nos permite seleccionar distintos tipos de proyectos y nosotros seleccionamos Kanban.
+<a id="__codelineno-14-101" name="__codelineno-14-101" href="#__codelineno-14-101"></a>4. En la nueva Pestaña podemos selccionar que elementos del repositorio queremos importar al proyecto. Podemos seleccionar open issues/open pull request y ambos. Seleccionamos la que mas nos guste. Ademas tambien podemos cambiar el repositorio asociado al proyecto si así lo deseamos.
+<a id="__codelineno-14-102" name="__codelineno-14-102" href="#__codelineno-14-102"></a>5. Una vez el proyecto se haya creado, veremos lo siguente:
+<a id="__codelineno-14-103" name="__codelineno-14-103" href="#__codelineno-14-103"></a>![Crear Kanban](../images/images/kanbans/ka_1.png)
+<a id="__codelineno-14-104" name="__codelineno-14-104" href="#__codelineno-14-104"></a>
+<a id="__codelineno-14-105" name="__codelineno-14-105" href="#__codelineno-14-105"></a>### Modificar el Kanban
+<a id="__codelineno-14-106" name="__codelineno-14-106" href="#__codelineno-14-106"></a>Si por la razon que fuera, necesitamos modificar el kanban(borrar columnas y cambiar el nombre de las columnas ...) se puede realizar pulsando los puntos suspensivos de cada columna.
+<a id="__codelineno-14-107" name="__codelineno-14-107" href="#__codelineno-14-107"></a>
+<a id="__codelineno-14-108" name="__codelineno-14-108" href="#__codelineno-14-108"></a>### Añadir elementos
+<a id="__codelineno-14-109" name="__codelineno-14-109" href="#__codelineno-14-109"></a>1. Para añadir un nuevo elemento a una columan, tan solo debemos pasar el raton por encima y pulsar donde pone add item. 
+<a id="__codelineno-14-110" name="__codelineno-14-110" href="#__codelineno-14-110"></a>2. Posterioment aparecera una barra de texto inferior donde pondremos el titulo del elemento y pulsamos enter.
+<a id="__codelineno-14-111" name="__codelineno-14-111" href="#__codelineno-14-111"></a>3. Nos preguntara el repositorio que queremos usar y pulsamos en blank issue
+<a id="__codelineno-14-112" name="__codelineno-14-112" href="#__codelineno-14-112"></a>4. En esta pestaña podremos modificar escribir una descripcion, asignar colaboradores al issue , añadir una etiqueta...
+<a id="__codelineno-14-113" name="__codelineno-14-113" href="#__codelineno-14-113"></a>![Añadir elementos kanban](../images/gitImages/kanbans/ka_2.png)
+<a id="__codelineno-14-114" name="__codelineno-14-114" href="#__codelineno-14-114"></a>
+<a id="__codelineno-14-115" name="__codelineno-14-115" href="#__codelineno-14-115"></a>### Añadir Colaboradores
+<a id="__codelineno-14-116" name="__codelineno-14-116" href="#__codelineno-14-116"></a>Es importante mencionar que los repositorios de github y el proyecto kanban no estan del todo relacionados, por lo que los colaboradores de un repositorio no pueden acceder de serie al kanban. Para añadirlos se hace desde los ajustes del proyecto kanban que se encuentran en los puntos suspensivos arriba a la derecha.
+<a id="__codelineno-14-117" name="__codelineno-14-117" href="#__codelineno-14-117"></a>&lt;div align=&quot;center&quot;&gt;
+<a id="__codelineno-14-118" name="__codelineno-14-118" href="#__codelineno-14-118"></a>
+<a id="__codelineno-14-119" name="__codelineno-14-119" href="#__codelineno-14-119"></a>![Añadir Colaboradores](../images/gitImages/kanbans/ka_3.png)
+<a id="__codelineno-14-120" name="__codelineno-14-120" href="#__codelineno-14-120"></a>&lt;/div&gt;
+<a id="__codelineno-14-121" name="__codelineno-14-121" href="#__codelineno-14-121"></a>
+<a id="__codelineno-14-122" name="__codelineno-14-122" href="#__codelineno-14-122"></a>
+<a id="__codelineno-14-123" name="__codelineno-14-123" href="#__codelineno-14-123"></a>## Pull Request
+<a id="__codelineno-14-124" name="__codelineno-14-124" href="#__codelineno-14-124"></a>Supongamos que estamos trabajando en una empresa donde usan la siguiente estructura de ramas:
+<a id="__codelineno-14-125" name="__codelineno-14-125" href="#__codelineno-14-125"></a>
+<a id="__codelineno-14-126" name="__codelineno-14-126" href="#__codelineno-14-126"></a>- Rama `main` -&gt; version estable del programa.
+<a id="__codelineno-14-127" name="__codelineno-14-127" href="#__codelineno-14-127"></a>- Rama `development` -&gt; version mas reciente en desarrollo.
+<a id="__codelineno-14-128" name="__codelineno-14-128" href="#__codelineno-14-128"></a>- Rama `featureX`-&gt; ramas que se crean en para desarrollar cada caracteristica del codigo.
+<a id="__codelineno-14-129" name="__codelineno-14-129" href="#__codelineno-14-129"></a>- 
+<a id="__codelineno-14-130" name="__codelineno-14-130" href="#__codelineno-14-130"></a>Hasta ahora lo que haríamos es crear una rama feature, desarrollar nuestra característica y luego unificarla con develop. Los equipos profesionales no funcionan así. En estos equipos, no se puede realizar un cambio al código común sin que alguien más valide tu código.
+<a id="__codelineno-14-131" name="__codelineno-14-131" href="#__codelineno-14-131"></a>
+<a id="__codelineno-14-132" name="__codelineno-14-132" href="#__codelineno-14-132"></a>Para esto GitHub facilita los Pull Request (PR). Una PR no es un comando de Git, es una funcionalidad de la plataforma (GitHub, GitLab, Bitbucket) que actúa como una &quot;petición formal&quot; para fusionar tu trabajo en una rama común. 
+<a id="__codelineno-14-133" name="__codelineno-14-133" href="#__codelineno-14-133"></a>
+<a id="__codelineno-14-134" name="__codelineno-14-134" href="#__codelineno-14-134"></a>--
+<a id="__codelineno-14-135" name="__codelineno-14-135" href="#__codelineno-14-135"></a>### Pasos para realizar una Pull Request (Workflow)
+<a id="__codelineno-14-136" name="__codelineno-14-136" href="#__codelineno-14-136"></a>
+<a id="__codelineno-14-137" name="__codelineno-14-137" href="#__codelineno-14-137"></a>El flujo de trabajo estándar en GitHub tras terminar el desarrollo en tu rama local es el siguiente:
+<a id="__codelineno-14-138" name="__codelineno-14-138" href="#__codelineno-14-138"></a>#### Paso 1: Subir la rama a GitHub
+<a id="__codelineno-14-139" name="__codelineno-14-139" href="#__codelineno-14-139"></a>
+<a id="__codelineno-14-140" name="__codelineno-14-140" href="#__codelineno-14-140"></a>Una vez que has terminado tus cambios y has hecho los commits correspondientes en tu rama feature, debes subirla al repositorio remoto:
+</code></pre></div>
+git push origin featureX
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>#### Paso 2: Iniciar la petición en la web
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Al entrar en el repositorio en GitHub, la plataforma detectará que acabas de subir una rama nueva y te mostrará un aviso destacado. Es el momento de iniciar la PR.
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>![Crear Pull request](../images/gitImages/pr/pr_1.png)
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>GitHub detecta los cambios en tu rama feature (en la imagen delivery2) y te muestra el botón verde &quot;Compare &amp; pull request&quot;. También puedes pulsar en la pestaña &quot;Contribute&quot; para abrir el mismo menú.
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>#### Paso 3: Rellenar los datos y crear
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Al pulsar el botón, irás a una pantalla de configuración. 
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>![Crear Pull request](../images/gitImages/pr/pr_2.png)
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>En esta pantalla prodemos:
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>- Determinar la rama base(a la que vamos a unificar los cambios) y la rama con los cambios. Es posible que si hay conflictos entre las ramas no nos deje unificar las ramas y nos muestre un mensaje de error.
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>- Añadir un titulo y una descripcion de los cambios que hemos realizado.
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>- Asignar usuarios para revisar el pull request.
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>- Crear el pull request.
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>#### La Revisión de Código
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>Una vez creada la PR, tu trabajo se somete a revisión. Es el momento en el que el equipo entra en acción:
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>1. Validación Automática (GitHub Actions): Si hay tests configurados, se ejecutarán automáticamente. Si fallan, aparecerá un aspa roja y no se debería fusionar el código hasta arreglarlo.
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>2. Revisión Humana (Code Review): Tus compañeros revisarán los cambios en la pestaña &quot;Files changed&quot;. Pueden dejar comentarios en líneas específicas, pedir correcciones (Request changes) o aprobar el trabajo (Approve).
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>3. El Merge: Solo cuando el código tiene las aprobaciones necesarias y pasa los tests automáticos, se habilita el botón verde de &quot;Merge pull request&quot; para fusionar el código definitivamente en la rama base.
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>|Estado|Significado|
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>|----------|-----------------|
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>|Open|La PR está activa y esperando revisión.|
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>|Draft|Trabajo en progreso. Se puede ver pero no fusionar.|
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>|Merged|El código ha sido fusionado en la rama principal.|
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>|Closed|La PR ha sido descartada sin fusionar.|
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>## Github Actions
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>GitHub Actions es una plataforma de Integración Continua y Despliegue Continuo (CI/CD) que permite automatizar todos tus flujos de trabajo de desarrollo directamente desde GitHub.
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>¿Para qué sirve?
+<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>
+<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>Si los Git Hooks se ejecutan en tu ordenador (local), las Actions se ejecutan en los servidores de GitHub (remoto). Sirven para que, cada vez que alguien suba código o abra una Pull Request, ocurran cosas automáticamente:
+<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>
+<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>- Compilar el código: Comprobar que no hay errores de sintaxis.
+<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>
+<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>- Pasar Tests: Ejecutar Maven o JUnit para asegurar que nada se ha roto.
+<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>
+<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>- Revisar el estilo: Pasar un Linter para que todo el equipo escriba el código igual.
+<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>
+<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>- Desplegar: Subir la web o la App a un servidor automáticamente si todo lo anterior es correcto.
+<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>
+<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>### ¿Cómo se configuran?
+<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>GitHub utiliza archivos de configuración en formato YAML (con extensión .yml). Estos archivos deben guardarse obligatoriamente en una ruta específica de tu proyecto: .github/workflows/.
+<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>Conceptos clave de un Workflow:
+<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>
+<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>- Workflow: El proceso automatizado total (un archivo .yml).
+<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>
+<a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>- Events: El disparador. Ej: on: [push] (cuando alguien sube algo).
+<a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a>
+<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>- Jobs: Un grupo de pasos que se ejecutan en una misma máquina virtual (Runner).
+<a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a>
+<a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a>- Steps: Las tareas individuales (instalar Java, correr comandos, etc.).
+<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>
+<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a>- Ejemplo Práctico: El &quot;Inspector de Maven&quot;
+<a id="__codelineno-15-66" name="__codelineno-15-66" href="#__codelineno-15-66"></a>
+<a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a>Supongamos que queremos que GitHub revise tu proyecto de Java cada vez que alguien haga un push a la rama main. Crearías el archivo .github/workflows/maven-check.yml:
+</code></pre></div>
+name: Java CI con Maven</p>
+</li>
+</ul>
+<h1 id="cuando-se-activa">¿Cuándo se activa?</h1>
+<p>on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]</p>
+<h1 id="que-va-a-hacer">¿Qué va a hacer?</h1>
+<p>jobs:
+  build:
+    runs-on: ubuntu-latest  # GitHub nos presta una máquina Linux gratis</p>
+<div class="highlight"><pre><span></span><code>steps:
+- name: Copiar código en la máquina virtual
+  uses: actions/checkout@v4
+
+- name: Configurar Java 17
+  uses: actions/setup-java@v4
+  with:
+    java-version: &#39;17&#39;
+    distribution: &#39;temurin&#39;
+
+- name: Ejecutar los Tests de Maven
+  run: mvn test
+</code></pre></div>
+<p>```</p>
+<h3 id="diferencias-con-git-hooks-server-side">Diferencias con Git Hooks (Server-Side)</h3>
+<p>Aunque existen los hooks de servidor de Git (como pre-receive), en GitHub usamos Actions porque:</p>
+<ul>
+<li>
+<p>Aislamiento: Cada Action corre en una máquina virtual limpia (contenedor), sin ensuciar el servidor de Git.</p>
+</li>
+<li>
+<p>Visibilidad: Si una Action falla, verás una X roja en tu commit o Pull Request. Si pasa, verás un check verde.</p>
+</li>
+<li>
+<p>Facilidad: No necesitas tocar la configuración interna del servidor; solo creas un archivo de texto en tu repo.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026 <a href="https://github.com/MarceloSaval" target="_blank" rel="noopener">Marcelo Saval</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.lin", "content.code.annotation", "content.code.copy", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
